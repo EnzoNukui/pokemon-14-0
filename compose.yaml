@@ -1,0 +1,32 @@
+name: pokemon-13-0
+
+services:
+  battle-engine:
+    build:
+      context: ./battle-engine
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${BATTLE_ENGINE_PORT:-3001}:3001"
+
+  postgres:
+    image: postgres:18-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:?Configure POSTGRES_DB in the root .env file}
+      POSTGRES_USER: ${POSTGRES_USER:?Configure POSTGRES_USER in the root .env file}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Configure POSTGRES_PASSWORD in the root .env file}
+    ports:
+      - "127.0.0.1:${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql
+    healthcheck:
+      test:
+        - CMD-SHELL
+        - pg_isready -U "$${POSTGRES_USER}" -d "$${POSTGRES_DB}"
+      interval: 5s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+
+volumes:
+  postgres_data:

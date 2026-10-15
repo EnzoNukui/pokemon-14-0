@@ -1,0 +1,3716 @@
+{
+  "roster_version": "90-trainers-gen9-v7",
+  "source_file": "database/seeds/trainers/elenco_aprovado.json",
+  "trainers": [
+    {
+      "name": "Agatha",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/agatha-gen3.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-1-red-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 1, Red — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Gengar",
+            "Golbat",
+            "Haunter",
+            "Arbok",
+            "Gengar"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "lets-go-rematch-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Let's Go Pikachu/Eevee — rematch da Elite Four",
+          "source_url": "https://www.serebii.net/letsgopikachueevee/elitefour.shtml",
+          "source_notes": "Escalação oficial completa de uma batalha específica; variante separada do registro parcial do Kaggle. Não combinar com outras versões.",
+          "members": [
+            "Arbok",
+            "Gengar",
+            "Golbat",
+            "Weezing",
+            "Marowak",
+            "Gengar"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Blaine",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/blaine.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-1-red-cinnabar-island",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 1, Red — Cinnabar Island",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Growlithe",
+            "Ponyta",
+            "Rapidash",
+            "Arcanine"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-kanto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/kanto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Arcanine",
+            "Ninetales",
+            "Charizard",
+            "Magmortar",
+            "Flareon",
+            "Rapidash"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Blue",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/blue-gen3champion.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-1-red-elite-four",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 1, Red — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 6/6.",
+          "members": [
+            "Pidgeot",
+            "Alakazam",
+            "Rhydon",
+            "Arcanine",
+            "Gyarados",
+            "Venusaur"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "gen-1-red-elite-four-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 1, Red — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Pidgeot",
+            "Alakazam",
+            "Rhydon",
+            "Arcanine",
+            "Gyarados",
+            "Venusaur"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Brock",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/brock.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-pewter-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Pewter City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Graveler",
+            "Rhyhorn",
+            "Omastar",
+            "Onix",
+            "Kabutops"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-kanto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/kanto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Onix",
+            "Golem",
+            "Kabutops",
+            "Omastar",
+            "Aerodactyl",
+            "Relicanth"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Bruno",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/bruno.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-1-red-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 1, Red — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Onix",
+            "Hitmonchan",
+            "Hitmonlee",
+            "Onix",
+            "Machamp"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "stadium2-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-stadium-2",
+          "source_url": "https://www.serebii.net/stadium2/elitefour.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Blastoise",
+            "Machamp",
+            "Golem",
+            "Onix",
+            "Kangaskhan",
+            "Heracross"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Erika",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/erika.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-celadon-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Celadon City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Tangela",
+            "Jumpluff",
+            "Victreebel",
+            "Bellossom"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-kanto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/kanto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Vileplume",
+            "Venusaur",
+            "Victreebel",
+            "Exeggutor",
+            "Tangrowth",
+            "Bellossom"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Giovanni",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/giovanni.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-1-yellow-viridian-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 1, Yellow — Viridian City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Dugtrio",
+            "Persian",
+            "Nidoqueen",
+            "Nidoking",
+            "Rhydon"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-kanto-giovanni",
+          "category": "GYM_LEADER",
+          "anime_period": "Black 2/White 2 — Pokémon World Tournament, Kanto Leaders",
+          "source_url": "https://www.serebii.net/black2white2/pwt/kanto.shtml",
+          "source_notes": "Escalação completa oficial de seis do PWT; variante separada do time parcial do Kaggle.",
+          "members": [
+            "Rhyperior",
+            "Golem",
+            "Marowak",
+            "Sandslash",
+            "Nidoking",
+            "Nidoqueen"
+          ],
+          "difficulty_tier": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Koga",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/koga.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-crystal-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Crystal — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Ariados",
+            "Venomoth",
+            "Forretress",
+            "Muk",
+            "Crobat"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "stadium2-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-stadium-2",
+          "source_url": "https://www.serebii.net/stadium2/elitefour.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Golbat",
+            "Venomoth",
+            "Muk",
+            "Electrode",
+            "Ariados",
+            "Gligar"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Lorelei",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/lorelei.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-1-red-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 1, Red — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Dewgong",
+            "Cloyster",
+            "Slowbro",
+            "Jynx",
+            "Lapras"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "lets-go-rematch-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Let's Go Pikachu/Eevee — rematch da Elite Four",
+          "source_url": "https://www.serebii.net/letsgopikachueevee/elitefour.shtml",
+          "source_notes": "Escalação oficial completa de uma batalha específica; variante separada do registro parcial do Kaggle. Não combinar com outras versões.",
+          "members": [
+            "Dewgong",
+            "Jynx",
+            "Cloyster",
+            "Slowbro",
+            "Sandslash",
+            "Lapras"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Lt. Surge",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/ltsurge-gen3.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-vermilion-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Vermilion City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Raichu",
+            "Electrode",
+            "Electrode",
+            "Magneton",
+            "Electabuzz"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-kanto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/kanto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Raichu",
+            "Electrode",
+            "Magnezone",
+            "Electivire",
+            "Jolteon",
+            "Ampharos"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Misty",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/misty.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-cerulean-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Cerulean City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Golduck",
+            "Quagsire",
+            "Lapras",
+            "Starmie"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-kanto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/kanto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Starmie",
+            "Lanturn",
+            "Jellicent",
+            "Lapras",
+            "Quagsire",
+            "Blastoise"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Sabrina",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/sabrina.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-1-red-saffron-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 1, Red — Saffron City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Kadabra",
+            "Mr. Mime",
+            "Venomoth",
+            "Alakazam"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-kanto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/kanto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Alakazam",
+            "Hypno",
+            "Mr. Mime",
+            "Slowking",
+            "Espeon",
+            "Jynx"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Clair",
+      "region": "Johto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/clair.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-crystal-blackthorn-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Crystal — Blackthorn City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Dragonair",
+            "Dragonair",
+            "Dragonair",
+            "Kingdra"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-johto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/johto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Dragonite",
+            "Kingdra",
+            "Altaria",
+            "Salamence",
+            "Druddigon",
+            "Garchomp"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Jasmine",
+      "region": "Johto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/jasmine.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-crystal-olivine-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Crystal — Olivine City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Magnemite",
+            "Magnemite",
+            "Steelix"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-johto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/johto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Steelix",
+            "Magnezone",
+            "Forretress",
+            "Skarmory",
+            "Metagross",
+            "Mawile"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Janine",
+      "region": "Johto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/janine.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-fuchsia-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Fuchsia City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Crobat",
+            "Weezing",
+            "Weezing",
+            "Ariados",
+            "Venomoth"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-kanto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/kanto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Venomoth",
+            "Weezing",
+            "Ariados",
+            "Crobat",
+            "Arbok",
+            "Tentacruel"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Karen",
+      "region": "Johto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/karen.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Umbreon",
+            "Vileplume",
+            "Gengar",
+            "Murkrow",
+            "Houndoom"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "stadium2-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-stadium-2",
+          "source_url": "https://www.serebii.net/stadium2/elitefour.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Vileplume",
+            "Victreebel",
+            "Gengar",
+            "Magmar",
+            "Umbreon",
+            "Murkrow"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Lance",
+      "region": "Johto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/lance.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-elite-four",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 6/6.",
+          "members": [
+            "Gyarados",
+            "Dragonite",
+            "Dragonite",
+            "Aerodactyl",
+            "Charizard",
+            "Dragonite"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "gen-2-gold-elite-four-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Gyarados",
+            "Dragonite",
+            "Dragonite",
+            "Aerodactyl",
+            "Charizard",
+            "Dragonite"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Morty",
+      "region": "Johto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/morty.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-ecruteak-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Ecruteak City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Gastly",
+            "Haunter",
+            "Haunter",
+            "Gengar"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-johto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/johto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Gengar",
+            "Mismagius",
+            "Banette",
+            "Dusknoir",
+            "Sableye",
+            "Froslass"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Pryce",
+      "region": "Johto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/pryce.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-mahogany-town",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Mahogany Town",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Seel",
+            "Dewgong",
+            "Piloswine"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-johto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/johto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Mamoswine",
+            "Jynx",
+            "Dewgong",
+            "Cloyster",
+            "Lapras",
+            "Weavile"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Whitney",
+      "region": "Johto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/whitney.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-goldenrod-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Goldenrod City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 2/6.",
+          "members": [
+            "Clefairy",
+            "Miltank"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-johto",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/johto.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Miltank",
+            "Wigglytuff",
+            "Tauros",
+            "Ambipom",
+            "Ursaring",
+            "Clefable"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Will",
+      "region": "Johto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/will.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-2-gold-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 2, Gold — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Xatu",
+            "Jynx",
+            "Exeggutor",
+            "Slowbro",
+            "Xatu"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "stadium2-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-stadium-2",
+          "source_url": "https://www.serebii.net/stadium2/elitefour.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Clefable",
+            "Kadabra",
+            "Exeggutor",
+            "Jynx",
+            "Xatu",
+            "Girafarig"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Drake",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/drake.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-ruby-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Ruby — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Shelgon",
+            "Altaria",
+            "Flygon",
+            "Flygon",
+            "Salamence"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "oras-rematch",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "omega-ruby-alpha-sapphire",
+          "source_url": "https://www.serebii.net/omegarubyalphasapphire/elitefour.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Altaria",
+            "Dragalge",
+            "Kingdra",
+            "Flygon",
+            "Haxorus",
+            "Salamence"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Flannery",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/flannery.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-emerald-lavaridge-town",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Emerald — Lavaridge Town",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Numel",
+            "Slugma",
+            "Camerupt (CSV: Camelrupt)",
+            "Torkoal"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-hoenn",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/hoenn.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Torkoal",
+            "Camerupt",
+            "Magcargo",
+            "Blaziken",
+            "Houndoom",
+            "Magmortar"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Flint",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/flint.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-diamond-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Diamond — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Rapidash",
+            "Steelix",
+            "Drifblim",
+            "Lopunny",
+            "Infernape"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "bdsp-elite-four-advanced-rematch",
+          "category": "ELITE_FOUR",
+          "anime_period": "Brilliant Diamond/Shining Pearl — rematch avançado da Elite Four",
+          "source_url": "https://www.serebii.net/brilliantdiamondshiningpearl/elitefour.shtml",
+          "source_notes": "Sexteto da rematch avançada, a variante mais forte documentada.",
+          "members": [
+            "Ninetales",
+            "Houndoom",
+            "Rapidash",
+            "Infernape",
+            "Arcanine",
+            "Magmortar"
+          ],
+          "difficulty_tier": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Glacia",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/glacia.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-ruby-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Ruby — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Glalie",
+            "Sealeo",
+            "Sealeo",
+            "Glalie",
+            "Walrein"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "oras-rematch",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "omega-ruby-alpha-sapphire",
+          "source_url": "https://www.serebii.net/omegarubyalphasapphire/elitefour.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Abomasnow",
+            "Beartic",
+            "Froslass",
+            "Vanilluxe",
+            "Walrein",
+            "Glalie"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Juan",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/juan.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-emerald-sootopolis-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Emerald — Sootopolis City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Luvdisc",
+            "Whiscash",
+            "Sealeo",
+            "Crawdaunt",
+            "Kingdra"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-hoenn",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/hoenn.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Kingdra",
+            "Walrein",
+            "Crawdaunt",
+            "Whiscash",
+            "Huntail",
+            "Gorebyss"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Norman",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/norman.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-emerald-petalburg-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Emerald — Petalburg City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Spinda",
+            "Vigoroth",
+            "Linoone",
+            "Slaking"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-hoenn",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/hoenn.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Slaking",
+            "Spinda",
+            "Kecleon",
+            "Castform",
+            "Exploud",
+            "Zangoose"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Phoebe",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/phoebe.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-ruby-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Ruby — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Dusclops",
+            "Banette",
+            "Banette",
+            "Sableye",
+            "Dusclops"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "oras-rematch",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "omega-ruby-alpha-sapphire",
+          "source_url": "https://www.serebii.net/omegarubyalphasapphire/elitefour.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Banette",
+            "Mismagius",
+            "Drifblim",
+            "Chandelure",
+            "Dusknoir",
+            "Sableye"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Sidney",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/sidney.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-ruby-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Ruby — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Mightyena",
+            "Cacturne",
+            "Shiftry",
+            "Sharpedo",
+            "Absol"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "oras-rematch",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "omega-ruby-alpha-sapphire",
+          "source_url": "https://www.serebii.net/omegarubyalphasapphire/elitefour.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Scrafty",
+            "Shiftry",
+            "Sharpedo",
+            "Zoroark",
+            "Mandibuzz",
+            "Absol"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Steven",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/steven.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-emerald-elite-four",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Emerald — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 6/6.",
+          "members": [
+            "Skarmory",
+            "Claydol",
+            "Cradily",
+            "Armaldo",
+            "Aggron",
+            "Metagross"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "gen-3-emerald-elite-four-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Emerald — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Skarmory",
+            "Claydol",
+            "Cradily",
+            "Armaldo",
+            "Aggron",
+            "Metagross"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Tate & Liza",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/tateandliza-gen6.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-emerald-mossdeep-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Emerald — Mossdeep City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Claydol",
+            "Xatu",
+            "Lunatone",
+            "Solrock"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "emerald-final-rematch",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Emerald — quarto rematch do ginásio, batalha em dupla",
+          "source_url": "https://www.serebii.net/emerald/entrycall/lizatate.shtml",
+          "source_notes": "Escalação oficial completa de uma batalha específica; variante separada do registro parcial do Kaggle. Não combinar com outras versões.",
+          "members": [
+            "Hypno",
+            "Claydol",
+            "Slowking",
+            "Xatu",
+            "Lunatone",
+            "Solrock"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Wallace",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/wallace.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-emerald-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Emerald — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 6/6.",
+          "members": [
+            "Tentacruel",
+            "Gyarados",
+            "Ludicolo",
+            "Whiscash",
+            "Wailord",
+            "Milotic"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "gen-3-emerald-elite-four-champion",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Emerald — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Variação autorizada para a categoria CHAMPION; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Tentacruel",
+            "Gyarados",
+            "Ludicolo",
+            "Whiscash",
+            "Wailord",
+            "Milotic"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Wattson",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/wattson.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-emerald-mauville-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Emerald — Mauville City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Voltorb",
+            "Electrike",
+            "Magnemite",
+            "Manectric"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-hoenn",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/hoenn.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Manectric",
+            "Magnezone",
+            "Electrode",
+            "Plusle",
+            "Minun",
+            "Raichu"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Winona",
+      "region": "Hoenn",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/winona.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-3-emerald-fortree-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 3, Emerald — Fortree City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Swablu",
+            "Tropius",
+            "Pelipper",
+            "Skarmory",
+            "Altaria"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-hoenn",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/hoenn.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Altaria",
+            "Pelipper",
+            "Swellow",
+            "Skarmory",
+            "Tropius",
+            "Honchkrow"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Aaron",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/aaron.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-diamond-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Diamond — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Dustox",
+            "Beautifly",
+            "Vespiquen",
+            "Heracross",
+            "Drapion"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "bdsp-rematch",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "brilliant-diamond-shining-pearl",
+          "source_url": "https://www.serebii.net/brilliantdiamondshiningpearl/elitefour.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Yanmega",
+            "Scizor",
+            "Vespiquen",
+            "Heracross",
+            "Flygon",
+            "Drapion"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Bertha",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/bertha.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-diamond-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Diamond — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Quagsire",
+            "Sudowoodo",
+            "Golem",
+            "Whiscash",
+            "Hippowdon"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "bdsp-rematch",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "brilliant-diamond-shining-pearl",
+          "source_url": "https://www.serebii.net/brilliantdiamondshiningpearl/elitefour.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Whiscash",
+            "Gliscor",
+            "Nidoking",
+            "Hippowdon",
+            "Mamoswine",
+            "Rhyperior"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Byron",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/byron.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-platinum-canalave-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Platinum — Canalave City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Magneton",
+            "Steelix",
+            "Bastiodon"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-sinnoh",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/sinnoh.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Bastiodon",
+            "Steelix",
+            "Bronzong",
+            "Magnezone",
+            "Aggron",
+            "Forretress"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Candice",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/candice.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-platinum-snowpoint-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Platinum — Snowpoint City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Sneasel",
+            "Piloswine",
+            "Abomasnow",
+            "Froslass"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-sinnoh",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/sinnoh.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Froslass",
+            "Abomasnow",
+            "Weavile",
+            "Glaceon",
+            "Mamoswine",
+            "Glalie"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Crasher Wake",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/crasherwake.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-platinum-pastoria-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Platinum — Pastoria City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Gyarados",
+            "Quagsire",
+            "Floatzel"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-sinnoh",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/sinnoh.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Floatzel",
+            "Empoleon",
+            "Lumineon",
+            "Gastrodon",
+            "Quagsire",
+            "Gyarados"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Cynthia",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/cynthia.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-diamond-elite-four",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Diamond — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 6/6.",
+          "members": [
+            "Spiritomb",
+            "Roserade",
+            "Gastrodon",
+            "Lucario",
+            "Milotic",
+            "Garchomp"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "gen-4-diamond-elite-four-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Diamond — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Spiritomb",
+            "Roserade",
+            "Gastrodon",
+            "Lucario",
+            "Milotic",
+            "Garchomp"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Fantina",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/fantina.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-diamond-hearthome-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Diamond — Hearthome City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Drifblim",
+            "Gengar",
+            "Mismagius"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-sinnoh",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/sinnoh.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Mismagius",
+            "Drifblim",
+            "Spiritomb",
+            "Dusknoir",
+            "Rotom",
+            "Gengar"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Gardenia",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/gardenia.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-platinum-eterna-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Platinum — Eterna City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Turtwig",
+            "Cherrim",
+            "Roserade"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-sinnoh",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/sinnoh.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Roserade",
+            "Carnivine",
+            "Cherrim",
+            "Tangrowth",
+            "Leafeon",
+            "Torterra"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Lucian",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/lucian.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-diamond-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Diamond — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Mr. Mime",
+            "Girafarig",
+            "Medicham",
+            "Alakazam",
+            "Bronzong"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "bdsp-elite-four-advanced-rematch",
+          "category": "ELITE_FOUR",
+          "anime_period": "Brilliant Diamond/Shining Pearl — rematch avançado da Elite Four",
+          "source_url": "https://www.serebii.net/brilliantdiamondshiningpearl/elitefour.shtml",
+          "source_notes": "Sexteto da rematch avançada, a variante mais forte documentada.",
+          "members": [
+            "Mr. Mime",
+            "Espeon",
+            "Bronzong",
+            "Alakazam",
+            "Slowbro",
+            "Gallade"
+          ],
+          "difficulty_tier": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Maylene",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/maylene.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-platinum-veilstone-town",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Platinum — Veilstone Town",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Meditite",
+            "Machoke",
+            "Lucario"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-sinnoh",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/sinnoh.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Lucario",
+            "Infernape",
+            "Toxicroak",
+            "Gallade",
+            "Medicham",
+            "Machamp"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Roark",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/roark.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-platinum-oreburgh-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Platinum — Oreburgh City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Geodude",
+            "Onix",
+            "Cranidos"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-sinnoh",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/sinnoh.shtml",
+          "source_notes": "Escalação completa de seis da pesquisa de jogos, registrada como equipe própria; não combina times diferentes.",
+          "members": [
+            "Rampardos",
+            "Probopass",
+            "Sudowoodo",
+            "Onix",
+            "Golem",
+            "Relicanth"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Volkner",
+      "region": "Sinnoh",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/volkner.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-4-platinum-sunyshore-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 4, Platinum — Sunyshore City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Jolteon",
+            "Raichu",
+            "Luxray",
+            "Electivire"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-sinnoh-volkner",
+          "category": "GYM_LEADER",
+          "anime_period": "Black 2/White 2 — Pokémon World Tournament, Sinnoh Leaders",
+          "source_url": "https://www.serebii.net/black2white2/pwt/sinnoh.shtml",
+          "source_notes": "Escalação completa oficial de seis do PWT; variante separada do time parcial do Kaggle.",
+          "members": [
+            "Electivire",
+            "Luxray",
+            "Raichu",
+            "Rotom",
+            "Jolteon",
+            "Electrode"
+          ],
+          "difficulty_tier": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Alder",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/alder.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-elite-four",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 6/6.",
+          "members": [
+            "Accelgor",
+            "Bouffalant",
+            "Druddigon",
+            "Vanilluxe",
+            "Escavalier",
+            "Volcarona"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "gen-5-black-elite-four-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Accelgor",
+            "Bouffalant",
+            "Druddigon",
+            "Vanilluxe",
+            "Escavalier",
+            "Volcarona"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Brycen",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/brycen.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-icirrus-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Icirrus City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Vanillish",
+            "Cryogonal",
+            "Beartic"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-unova",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/unova.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Cryogonal",
+            "Beartic",
+            "Vanilluxe",
+            "Weavile",
+            "Dewgong",
+            "Walrein"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Burgh",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/burgh.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-castelia-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Castelia City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Whirlipede",
+            "Dwebble",
+            "Leavanny"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-unova",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/unova.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Leavanny",
+            "Vespiquen",
+            "Crustle",
+            "Escavalier",
+            "Accelgor",
+            "Durant"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Caitlin",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/caitlin.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Reuniclus",
+            "Musharna",
+            "Sigilyph",
+            "Gothitelle"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "bw2-challenge-mode-rematch",
+          "category": "ELITE_FOUR",
+          "anime_period": "Black 2/White 2 — rematch da Elite Four, Challenge Mode",
+          "source_url": "https://www.serebii.net/black2white2/elitefour.shtml",
+          "source_notes": "Equipe de seis da rematch em Challenge Mode.",
+          "members": [
+            "Musharna",
+            "Alakazam",
+            "Gallade",
+            "Reuniclus",
+            "Gothitelle",
+            "Metagross"
+          ],
+          "difficulty_tier": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Clay",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/clay.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-driftveil-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Driftveil City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Krokorok",
+            "Palpitoad",
+            "Excadrill"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-unova",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/unova.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Excadrill",
+            "Claydol",
+            "Krookodile",
+            "Seismitoad",
+            "Mamoswine",
+            "Golurk"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Drayden",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/drayden.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-opelucid-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Opelucid City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Fraxure",
+            "Druddigon",
+            "Haxorus"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-unova",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/unova.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Haxorus",
+            "Druddigon",
+            "Hydreigon",
+            "Flygon",
+            "Altaria",
+            "Salamence"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Elesa",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/elesa.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-nimbasa-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Nimbasa City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Emolga",
+            "Emolga",
+            "Zebstrika"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-unova",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/unova.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Zebstrika",
+            "Ampharos",
+            "Galvantula",
+            "Emolga",
+            "Eelektross",
+            "Stunfisk"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Grimsley",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/grimsley.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Scrafty",
+            "Liepard",
+            "Krookodile",
+            "Bisharp"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "bw2-challenge-mode-rematch",
+          "category": "ELITE_FOUR",
+          "anime_period": "Black 2/White 2 — rematch da Elite Four, Challenge Mode",
+          "source_url": "https://www.serebii.net/black2white2/elitefour.shtml",
+          "source_notes": "Equipe de seis da rematch em Challenge Mode.",
+          "members": [
+            "Honchkrow",
+            "Scrafty",
+            "Krookodile",
+            "Houndoom",
+            "Tyranitar",
+            "Bisharp"
+          ],
+          "difficulty_tier": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Iris",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/iris.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-white-opelucid-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, White — Opelucid City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Fraxure",
+            "Druddigon",
+            "Haxorus"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "black2-white2-champion-iris",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Black 2/White 2 Champion",
+          "source_url": "https://www.serebii.net/black2white2/elitefour.shtml",
+          "source_notes": "Equipe de Iris como campeã de Unova.",
+          "members": [
+            "Hydreigon",
+            "Druddigon",
+            "Archeops",
+            "Aggron",
+            "Lapras",
+            "Haxorus"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "black2-white2-champion-iris-elite-four-slot",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Black 2/White 2 Champion",
+          "source_url": "https://www.serebii.net/black2white2/elitefour.shtml",
+          "source_notes": "Equipe de Iris como campeã de Unova.",
+          "members": [
+            "Hydreigon",
+            "Druddigon",
+            "Archeops",
+            "Aggron",
+            "Lapras",
+            "Haxorus"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Marshal",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/marshal.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Throh",
+            "Sawk",
+            "Conkeldurr",
+            "Mienshao"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "bw2-challenge-mode-rematch",
+          "category": "ELITE_FOUR",
+          "anime_period": "Black 2/White 2 — rematch da Elite Four, Challenge Mode",
+          "source_url": "https://www.serebii.net/black2white2/elitefour.shtml",
+          "source_notes": "Equipe de seis da rematch em Challenge Mode.",
+          "members": [
+            "Throh",
+            "Sawk",
+            "Machamp",
+            "Lucario",
+            "Mienshao",
+            "Conkeldurr"
+          ],
+          "difficulty_tier": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Shauntal",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/shauntal.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Cofagrigus",
+            "Jellicent",
+            "Golurk",
+            "Chandelure"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "bw2-challenge-mode-rematch",
+          "category": "ELITE_FOUR",
+          "anime_period": "Black 2/White 2 — rematch da Elite Four, Challenge Mode",
+          "source_url": "https://www.serebii.net/black2white2/elitefour.shtml",
+          "source_notes": "Equipe de seis da rematch em Challenge Mode.",
+          "members": [
+            "Cofagrigus",
+            "Gengar",
+            "Froslass",
+            "Drifblim",
+            "Golurk",
+            "Chandelure"
+          ],
+          "difficulty_tier": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Skyla",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/skyla.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-5-black-mistralton-city",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 5, Black — Mistralton City",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Swoobat",
+            "Unfezant",
+            "Swanna"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "pwt-unova",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "pokemon-world-tournament",
+          "source_url": "https://www.serebii.net/black2white2/pwt/unova.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Swanna",
+            "Unfezant",
+            "Swoobat",
+            "Mandibuzz",
+            "Archeops",
+            "Braviary"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Diantha",
+      "region": "Kalos",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/diantha.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-6-x-elite-four",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 6, X — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 6/6.",
+          "members": [
+            "Hawlucha",
+            "Tyrantrum",
+            "Aurorus",
+            "Gourgeist",
+            "Goodra",
+            "Gardevoir"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "gen-6-x-elite-four-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 6, X — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Hawlucha",
+            "Tyrantrum",
+            "Aurorus",
+            "Gourgeist",
+            "Goodra",
+            "Gardevoir"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Drasna",
+      "region": "Kalos",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/drasna.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-6-x-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 6, X — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe-base selecionada do Kaggle; a fonte original tinha 4/6. Complementos manuais aprovados pelo usuário: Goodra, Drampa. Goodra e Drampa foram aprovados como complementos temáticos de Dragão. Não há registro de uso deles por Drasna nas fontes consultadas no levantamento. Complemento temático aprovado; não atribuir como aparição canônica.",
+          "members": [
+            "Dragalge",
+            "Altaria",
+            "Druddigon",
+            "Noivern",
+            "Goodra",
+            "Drampa"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Malva",
+      "region": "Kalos",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/malva.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-6-x-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 6, X — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe-base selecionada do Kaggle; a fonte original tinha 4/6. Complementos manuais aprovados pelo usuário: Houndoom, Magmortar. Houndoom: uso no anime, https://www.serebii.net/anime/characters/malva.shtml. Magmortar: complemento temático de Fogo, sem uso confirmado por Malva. Houndoom veio de outra aparição no anime; Magmortar é escolha temática.",
+          "members": [
+            "Pyroar",
+            "Torkoal",
+            "Chandelure",
+            "Talonflame",
+            "Houndoom",
+            "Magmortar"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Siebold",
+      "region": "Kalos",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/siebold.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-6-x-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 6, X — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe-base selecionada do Kaggle; a fonte original tinha 4/6. Complementos manuais aprovados pelo usuário: Blastoise, Kingdra. Blastoise: uso no anime, https://www.serebii.net/anime/characters/siebold.shtml. Kingdra: complemento temático de Água, sem uso confirmado por Siebold. Blastoise veio de outra aparição no anime; Kingdra é escolha temática.",
+          "members": [
+            "Clawitzer",
+            "Starmie",
+            "Gyarados",
+            "Barbaracle",
+            "Blastoise",
+            "Kingdra"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Wikstrom",
+      "region": "Kalos",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/wikstrom.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-6-x-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 6, X — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe-base selecionada do Kaggle; a fonte original tinha 4/6. Complementos manuais aprovados pelo usuário: Escavalier, Honedge. Escavalier e Honedge foram aprovados com base nas aparições associadas a Wikstrom no anime, incluindo https://bulbapedia.bulbagarden.net/wiki/EP1141. Complementos aprovados com base no anime; equipe final combina com a escalação selecionada de X.",
+          "members": [
+            "Klefki",
+            "Probopass",
+            "Scizor",
+            "Aegislash",
+            "Escavalier",
+            "Honedge"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Acerola",
+      "region": "Alola",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/acerola.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-7-sun-pokemon-league",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 7, Sun — Pokémon League",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe-base selecionada do Kaggle; a fonte original tinha 5/6. Complementos manuais aprovados pelo usuário: Banette. Banette: equipe alternativa de Acerola como Elite Four em Ultra Sun/Ultra Moon, https://www.serebii.net/ultrasunultramoon/elitefour.shtml. Banette vem de outra batalha oficial; variante final é uma composição manual aprovada.",
+          "members": [
+            "Sableye",
+            "Drifblim",
+            "Dhelmise",
+            "Froslass",
+            "Palossand",
+            "Banette"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Hala",
+      "region": "Alola",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/hala.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-7-sun-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 7, Sun — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe-base selecionada do Kaggle; a fonte original tinha 5/6. Complementos manuais aprovados pelo usuário: Machamp. Machamp foi aprovado como complemento temático de Lutador; o levantamento não encontrou escalação oficial de Hala com Machamp. Complemento temático aprovado; não atribuir como aparição canônica.",
+          "members": [
+            "Hariyama",
+            "Primeape",
+            "Bewear",
+            "Poliwrath",
+            "Crabominable",
+            "Machamp"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Hapu",
+      "region": "Alola",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/hapu.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-7-sun-vast-poni-canyon",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 7, Sun — Vast Poni Canyon",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe-base selecionada do Kaggle; a fonte original tinha 4/6. Complementos manuais aprovados pelo usuário: Golurk, Krookodile. Golurk: aparece na equipe de Hapu em Ultra Sun/Ultra Moon, https://www.serebii.net/ultrasunultramoon/grandtrials.shtml. Krookodile: complemento temático de Terra, escolhido no lugar de Garchomp por ser menos forte. Golurk vem de outra batalha oficial; Krookodile é escolha temática aprovada.",
+          "members": [
+            "Dugtrio",
+            "Gastrodon",
+            "Flygon",
+            "Mudsdale",
+            "Golurk",
+            "Krookodile"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Kahili",
+      "region": "Alola",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/kahili.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-7-sun-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 7, Sun — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe-base selecionada do Kaggle; a fonte original tinha 5/6. Complementos manuais aprovados pelo usuário: Hawlucha. Hawlucha: aparece em outra equipe oficial de Kahili em Ultra Sun/Ultra Moon, https://www.serebii.net/ultrasunultramoon/elitefour.shtml. Hawlucha vem de outra batalha oficial; variante final é uma composição manual aprovada.",
+          "members": [
+            "Skarmory",
+            "Crobat",
+            "Oricorio",
+            "Mandibuzz",
+            "Toucannon",
+            "Hawlucha"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Kukui",
+      "region": "Alola",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/kukui.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-7-sun-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 7, Sun — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 6/6.",
+          "members": [
+            "Lycanroc",
+            "Ninetales",
+            "Braviary",
+            "Magnezone",
+            "Snorlax",
+            "Incineroar"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "gen-7-sun-elite-four-champion",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 7, Sun — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Variação autorizada para a categoria CHAMPION; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Lycanroc",
+            "Ninetales",
+            "Braviary",
+            "Magnezone",
+            "Snorlax",
+            "Incineroar"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Olivia",
+      "region": "Alola",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/olivia.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-7-sun-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 7, Sun — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe-base selecionada do Kaggle; a fonte original tinha 5/6. Complementos manuais aprovados pelo usuário: Anorith. Anorith: usado por Olivia no Grande Teste de Sun/Moon, https://www.serebii.net/sunmoon/grandtrials.shtml. Anorith vem de outra batalha oficial; variante final é uma composição manual aprovada.",
+          "members": [
+            "Relicanth",
+            "Carbink",
+            "Golem",
+            "Probopass",
+            "Lycanroc",
+            "Anorith"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Sophocles",
+      "region": "Alola",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/sophocles.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-7-sun-pokemon-league",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 7, Sun — Pokémon League",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe-base selecionada do Kaggle; a fonte original tinha 5/6. Complementos manuais aprovados pelo usuário: Raichu. Raichu de Alola foi aprovado como complemento temático Elétrico de Alola. A proposta evitou adicionar Charjabug junto de Vikavolt, pois Charjabug evolui para Vikavolt no anime. Raichu de Alola é escolha temática aprovada; não atribuir como aparição canônica.",
+          "members": [
+            "Togedemaru",
+            "Magnezone",
+            "Electivire",
+            "Vikavolt",
+            "Golem",
+            {
+              "name": "Raichu",
+              "form": "alola"
+            }
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Leon",
+      "region": "Galar",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/leon.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-8-sword-champion-cup",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 8, Sword — Champion Cup",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 6/6.",
+          "members": [
+            "Aegislash",
+            "Dragapult",
+            "Haxorus",
+            "Seismitoad",
+            "Cinderace",
+            "Charizard"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "gen-8-sword-champion-cup-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 8, Sword — Champion Cup",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Aegislash",
+            "Dragapult",
+            "Haxorus",
+            "Seismitoad",
+            "Cinderace",
+            "Charizard"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Brassius",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/brassius.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-artazon",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Artazon",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Petilil",
+            "Smoliv",
+            "Sudowoodo"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "blueberry-league-club",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-indigo-disk",
+          "source_url": "https://www.serebii.net/scarletviolet/leagueclubbattles.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Breloom",
+            "Arboliva",
+            "Vileplume",
+            "Tsareena",
+            "Lilligant",
+            "Sudowoodo"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Geeta",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/geeta.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-elite-four",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 6/6.",
+          "members": [
+            "Espathra",
+            "Gogoat",
+            "Veluza",
+            "Avalugg",
+            "Kingambit",
+            "Glimmora"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "gen-9-scarlet-elite-four-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Espathra",
+            "Gogoat",
+            "Veluza",
+            "Avalugg",
+            "Kingambit",
+            "Glimmora"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Grusha",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/grusha.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-glaseado",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Glaseado",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Frosmoth",
+            "Beartic",
+            "Cetitan",
+            "Altaria"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "blueberry-league-club",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-indigo-disk",
+          "source_url": "https://www.serebii.net/scarletviolet/leagueclubbattles.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Ninetales",
+            "Beartic",
+            "Frosmoth",
+            "Cetitan",
+            "Weavile",
+            "Altaria"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Hassel",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/hassel.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Noivern",
+            "Haxorus",
+            "Dragalge",
+            "Flapple",
+            "Baxcalibur"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "blueberry-league-club",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-indigo-disk",
+          "source_url": "https://www.serebii.net/scarletviolet/leagueclubbattles.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Duraludon",
+            "Noivern",
+            "Haxorus",
+            "Dragalge",
+            "Dragonite",
+            "Baxcalibur"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Iono",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/iono.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-levincia",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Levincia",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Wattrel",
+            "Bellibolt",
+            "Luxio",
+            "Mismagius"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "blueberry-league-club",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-indigo-disk",
+          "source_url": "https://www.serebii.net/scarletviolet/leagueclubbattles.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Kilowattrel",
+            "Electrode",
+            "Bellibolt",
+            "Luxray",
+            "Electivire",
+            "Mismagius"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Kofu",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/kofu.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-cascarrafa",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Cascarrafa",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 3/6.",
+          "members": [
+            "Veluza",
+            "Wugtrio",
+            "Crabominable"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "blueberry-league-club",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-indigo-disk",
+          "source_url": "https://www.serebii.net/scarletviolet/leagueclubbattles.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Pelipper",
+            "Veluza",
+            "Feraligatr",
+            "Wugtrio",
+            "Clawitzer",
+            "Crabominable"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Larry",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/larry.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Tropius",
+            "Oricorio",
+            "Altaria",
+            "Staraptor",
+            "Flamigo"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "scarlet-violet-league-club-elite-four",
+          "category": "ELITE_FOUR",
+          "anime_period": "Scarlet/Violet — batalha de Larry no League Club",
+          "source_url": "https://www.serebii.net/scarletviolet/leagueclubbattles.shtml",
+          "source_notes": "Sexteto específico da função de Larry na Elite Four; não combina suas equipes de ginásio e Elite Four.",
+          "members": [
+            "Oinkologne",
+            "Tauros",
+            "Dudunsparce",
+            "Altaria",
+            "Flamigo",
+            "Staraptor"
+          ],
+          "difficulty_tier": null,
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Poppy",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/poppy.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Copperajah",
+            "Magnezone",
+            "Bronzong",
+            "Corviknight"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "blueberry-league-club",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-indigo-disk",
+          "source_url": "https://www.serebii.net/scarletviolet/leagueclubbattles.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Copperajah",
+            "Bastiodon",
+            "Bronzong",
+            "Magnezone",
+            "Corviknight",
+            "Tinkaton"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Rika",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/rika.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Elite Four",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 5/6.",
+          "members": [
+            "Whiscash",
+            "Camerupt",
+            "Donphan",
+            "Dugtrio",
+            "Clodsire"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "blueberry-league-club",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-indigo-disk",
+          "source_url": "https://www.serebii.net/scarletviolet/leagueclubbattles.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Dugtrio",
+            "Whiscash",
+            "Camerupt",
+            "Torterra",
+            "Donphan",
+            "Clodsire"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Ryme",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/ryme.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-montenevera",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Montenevera",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Banette",
+            "Mimikyu",
+            "Houndstone",
+            "Toxtricity"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "blueberry-league-club",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-indigo-disk",
+          "source_url": "https://www.serebii.net/scarletviolet/leagueclubbattles.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Banette",
+            "Mimikyu",
+            "Golurk",
+            "Spiritomb",
+            "Houndstone",
+            "Toxtricity"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Tulip",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/tulip.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "gen-9-scarlet-alfornada",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "Gen. 9, Scarlet — Alfornada",
+          "source_url": "https://www.kaggle.com/datasets/maxiboo/pokemon-gen-1-9-gym-leaders-elite-four",
+          "source_notes": "Equipe selecionada no recorte do dataset; fonte original tinha 4/6.",
+          "members": [
+            "Farigiraf",
+            "Gardevoir",
+            "Espathra",
+            "Florges"
+          ],
+          "active": false
+        },
+        {
+          "team_key": "blueberry-league-club",
+          "category": "GYM_LEADER",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-indigo-disk",
+          "source_url": "https://www.serebii.net/scarletviolet/leagueclubbattles.shtml",
+          "source_notes": "Escalação completa de seis transcrita da pesquisa de jogos; mantida como variante própria, sem mesclar times de batalhas diferentes.",
+          "members": [
+            "Farigiraf",
+            "Gardevoir",
+            "Espathra",
+            "Gallade",
+            "Delphox",
+            "Florges"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Red",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/red-gen2.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "origins-final-vs-blue",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "origins-final-vs-blue",
+          "source_url": "https://bulbapedia.bulbagarden.net/wiki/Red_(Origins)",
+          "source_notes": "Pokémon Origins, batalha final contra Blue.",
+          "members": [
+            "Jolteon",
+            "Scyther",
+            "Lapras",
+            "Dodrio",
+            "Persian",
+            "Charizard"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "origins-final-vs-blue-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "origins-final-vs-blue",
+          "source_url": "https://bulbapedia.bulbagarden.net/wiki/Red_(Origins)",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Jolteon",
+            "Scyther",
+            "Lapras",
+            "Dodrio",
+            "Persian",
+            "Charizard"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Ash",
+      "region": "Anime",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/ash.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "masters-eight-final",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "masters-eight-final",
+          "source_url": "https://www.pokemon.com/uk/animation/seasons/25/episode-38-partners-in-time",
+          "source_notes": "Equipe usada na final do Masters Eight contra Leon.",
+          "members": [
+            "Pikachu",
+            "Dragonite",
+            "Gengar",
+            "Lucario",
+            "Sirfetch'd",
+            "Dracovish"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "masters-eight-final-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "masters-eight-final",
+          "source_url": "https://www.pokemon.com/uk/animation/seasons/25/episode-38-partners-in-time",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Pikachu",
+            "Dragonite",
+            "Gengar",
+            "Lucario",
+            "Sirfetch'd",
+            "Dracovish"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Gary",
+      "region": "Kanto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/blue-gen1champion.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": "Sprite visual de Blue, contraparte dos jogos; o diretório não tem sprite próprio para Gary do anime.",
+      "teams": [
+        {
+          "team_key": "silver-conference-vs-ash",
+          "category": "OTHER",
+          "difficulty_tier": null,
+          "anime_period": "silver-conference-vs-ash",
+          "source_url": "https://www.pokemon.com/us/animation/seasons/5/episode-59-the-ties-that-bind",
+          "source_notes": "Equipe de seis usada contra Ash na Conferência de Prata.",
+          "members": [
+            "Nidoqueen",
+            "Magmar",
+            "Blastoise",
+            "Arcanine",
+            "Scizor",
+            "Golem"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Alain",
+      "region": "Kalos",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/alain.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "kalos-league-final-vs-ash",
+          "category": "OTHER",
+          "difficulty_tier": null,
+          "anime_period": "kalos-league-final-vs-ash",
+          "source_url": "https://www.serebii.net/anime/characters/alain.shtml",
+          "source_notes": "Equipe de seis usada na final da Liga de Kalos contra Ash.",
+          "members": [
+            "Tyranitar",
+            "Weavile",
+            "Bisharp",
+            "Unfezant",
+            "Metagross",
+            "Charizard"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "N",
+      "region": "Unova",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/n.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "black-final-battle",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "black-final-battle",
+          "source_url": "https://pokemondb.net/black-white/gymleaders-elitefour",
+          "source_notes": "Equipe da batalha final de Black; lendário da versão: Zekrom.",
+          "members": [
+            "Carracosta",
+            "Vanilluxe",
+            "Archeops",
+            "Zoroark",
+            "Klinklang",
+            "Zekrom"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "white-final-battle",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "White final battle",
+          "source_url": "https://pokemondb.net/black-white/gymleaders-elitefour",
+          "source_notes": "Variante da batalha final de White; lendário da versão: Reshiram.",
+          "members": [
+            "Carracosta",
+            "Vanilluxe",
+            "Archeops",
+            "Zoroark",
+            "Klinklang",
+            "Reshiram"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "black-final-battle-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "black-final-battle",
+          "source_url": "https://pokemondb.net/black-white/gymleaders-elitefour",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Carracosta",
+            "Vanilluxe",
+            "Archeops",
+            "Zoroark",
+            "Klinklang",
+            "Zekrom"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Silver",
+      "region": "Johto",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/silver-gen2.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "hgss-final-meganium",
+          "category": "OTHER",
+          "difficulty_tier": null,
+          "anime_period": "hgss-final-meganium",
+          "source_url": "https://www.serebii.net/heartgoldsoulsilver/rival.shtml",
+          "source_notes": "Equipe final de HGSS; variante escolhida pelo inicial do jogador.",
+          "members": [
+            "Sneasel",
+            "Crobat",
+            "Magneton",
+            "Gengar",
+            "Alakazam",
+            "Meganium"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "hgss-final-typhlosion",
+          "category": "OTHER",
+          "difficulty_tier": null,
+          "anime_period": "HGSS final rival battle",
+          "source_url": "https://www.serebii.net/heartgoldsoulsilver/rival.shtml",
+          "source_notes": "Variante com Typhlosion como inicial final.",
+          "members": [
+            "Sneasel",
+            "Crobat",
+            "Magneton",
+            "Gengar",
+            "Alakazam",
+            "Typhlosion"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "hgss-final-feraligatr",
+          "category": "OTHER",
+          "difficulty_tier": null,
+          "anime_period": "HGSS final rival battle",
+          "source_url": "https://www.serebii.net/heartgoldsoulsilver/rival.shtml",
+          "source_notes": "Variante com Feraligatr como inicial final.",
+          "members": [
+            "Sneasel",
+            "Crobat",
+            "Magneton",
+            "Gengar",
+            "Alakazam",
+            "Feraligatr"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Nemona",
+      "region": "Paldea",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/nemona-s.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "scarlet-violet-final-meowscarada",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-final-meowscarada",
+          "source_url": "https://gamewith.net/pokemon-scarletviolet/article/show/36186",
+          "source_notes": "Equipe final; variante com Meowscarada como inicial final.",
+          "members": [
+            "Lycanroc",
+            "Pawmot",
+            "Dudunsparce",
+            "Orthworm",
+            "Goodra",
+            "Meowscarada"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "scarlet-violet-final-skeledirge",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Scarlet/Violet final battle",
+          "source_url": "https://gamewith.net/pokemon-scarletviolet/article/show/36186",
+          "source_notes": "Variante com Skeledirge como inicial final.",
+          "members": [
+            "Lycanroc",
+            "Pawmot",
+            "Dudunsparce",
+            "Orthworm",
+            "Goodra",
+            "Skeledirge"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "scarlet-violet-final-quaquaval",
+          "category": "CHAMPION",
+          "difficulty_tier": null,
+          "anime_period": "Scarlet/Violet final battle",
+          "source_url": "https://gamewith.net/pokemon-scarletviolet/article/show/36186",
+          "source_notes": "Variante com Quaquaval como inicial final.",
+          "members": [
+            "Lycanroc",
+            "Pawmot",
+            "Dudunsparce",
+            "Orthworm",
+            "Goodra",
+            "Quaquaval"
+          ],
+          "active": true
+        },
+        {
+          "team_key": "scarlet-violet-final-meowscarada-elite-four",
+          "category": "ELITE_FOUR",
+          "difficulty_tier": null,
+          "anime_period": "scarlet-violet-final-meowscarada",
+          "source_url": "https://gamewith.net/pokemon-scarletviolet/article/show/36186",
+          "source_notes": "Variação autorizada para a categoria ELITE_FOUR; escalação mantida igual à fonte aprovada.",
+          "members": [
+            "Lycanroc",
+            "Pawmot",
+            "Dudunsparce",
+            "Orthworm",
+            "Goodra",
+            "Meowscarada"
+          ],
+          "active": true
+        }
+      ]
+    },
+    {
+      "name": "Volo",
+      "region": "Hisui",
+      "sprite_url": "https://play.pokemonshowdown.com/sprites/trainers/volo.png",
+      "sprite_source": "Pokémon Showdown — sprites/trainers",
+      "sprite_credit": "Atribuição do artista consta no índice da fonte: https://play.pokemonshowdown.com/sprites/trainers/index.php",
+      "notes": null,
+      "teams": [
+        {
+          "team_key": "legends-arceus-final-vs-volo",
+          "category": "OTHER",
+          "difficulty_tier": null,
+          "anime_period": "legends-arceus-final-vs-volo",
+          "source_url": "https://www.nintendolife.com/guides/pokemon-legends-arceus-volo-how-to-defeat-volo",
+          "source_notes": "Equipe de seis antes da fase subsequente contra Giratina.",
+          "members": [
+            "Spiritomb",
+            "Roserade",
+            "Togekiss",
+            "Lucario",
+            "Garchomp",
+            {
+              "name": "Arcanine",
+              "form": "hisui"
+            }
+          ],
+          "active": true
+        }
+      ]
+    }
+  ]
+}

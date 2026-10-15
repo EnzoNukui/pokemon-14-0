@@ -1,0 +1,13 @@
+{
+  "name": "pokemon-13-0-battle-engine",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Pokémon Showdown integration for Pokémon 13-0",
+  "scripts": {
+    "test": "node --test",
+    "validate:builds": "node scripts/validate-builds.cjs"
+  },
+  "dependencies": {
+    "pokemon-showdown": "0.11.11"
+  }
+}
