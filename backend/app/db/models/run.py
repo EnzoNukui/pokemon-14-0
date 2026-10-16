@@ -31,17 +31,33 @@ class Run(TimestampMixin, Base):
             name="stage_values",
         ),
         CheckConstraint("progress_index BETWEEN 0 AND 13", name="progress_index_range"),
+        CheckConstraint(
+            "(user_id IS NOT NULL AND guest_session_id IS NULL) OR "
+            "(user_id IS NULL AND guest_session_id IS NOT NULL)",
+            name="exactly_one_owner",
+        ),
         Index(
             "uq_runs_one_active_per_user",
             "user_id",
             unique=True,
-            postgresql_where=text("status = 'ACTIVE'"),
+            postgresql_where=text("status = 'ACTIVE' AND user_id IS NOT NULL"),
+        ),
+        Index(
+            "uq_runs_one_active_per_guest_session",
+            "guest_session_id",
+            unique=True,
+            postgresql_where=text("status = 'ACTIVE' AND guest_session_id IS NOT NULL"),
         ),
     )
 
     id: Mapped[UUID] = mapped_column(Uuid(as_uuid=True), primary_key=True, default=uuid4)
-    user_id: Mapped[UUID] = mapped_column(
-        Uuid(as_uuid=True), ForeignKey("users.id", ondelete="RESTRICT"), nullable=False
+    user_id: Mapped[UUID | None] = mapped_column(
+        Uuid(as_uuid=True), ForeignKey("users.id", ondelete="RESTRICT"), nullable=True
+    )
+    guest_session_id: Mapped[UUID | None] = mapped_column(
+        Uuid(as_uuid=True),
+        ForeignKey("guest_sessions.id", ondelete="RESTRICT"),
+        nullable=True,
     )
     status: Mapped[str] = mapped_column(
         String(16), nullable=False, default="ACTIVE", server_default=text("'ACTIVE'")

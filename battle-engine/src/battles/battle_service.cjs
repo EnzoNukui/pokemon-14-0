@@ -4,7 +4,7 @@ const { getOrStartSession, getSession, removeSession } = require('./session_stor
 
 async function startBattle(input) {
   const session = getOrStartSession(input);
-  await session.waitUntilReady();
+  await session.waitUntilComplete();
   return session.snapshot();
 }
 

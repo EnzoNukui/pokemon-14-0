@@ -4,7 +4,7 @@ const { snapshot } = require('./battle_snapshot.cjs');
 const { createBattleStreams } = require('../showdown/battle_stream.cjs');
 const { serializeTeams } = require('../teams/team_serializer.cjs');
 
-const REQUEST_TIMEOUT_MS = 12000;
+const BATTLE_TIMEOUT_MS = 60000;
 
 class BattleSession {
   constructor(input) {
@@ -13,6 +13,7 @@ class BattleSession {
     this.request = null;
     this.requestCount = 0;
     this.winner = null;
+    this.activeSpecies = { p1: null, p2: null };
     this.pendingEvents = [];
     this.waiters = new Set();
     this.revision = 0;
@@ -29,13 +30,13 @@ class BattleSession {
     for (const wake of waiters) wake();
   }
 
-  async waitFor(condition) {
+  async waitFor(condition, timeoutMs = BATTLE_TIMEOUT_MS) {
     if (condition()) return;
     await new Promise((resolve, reject) => {
       const timeout = setTimeout(() => {
         this.waiters.delete(wake);
         reject(new Error('Timed out waiting for Showdown.'));
-      }, REQUEST_TIMEOUT_MS);
+      }, timeoutMs);
       const wake = () => {
         clearTimeout(timeout);
         if (condition()) resolve();
@@ -45,8 +46,8 @@ class BattleSession {
     });
   }
 
-  async waitUntilReady() {
-    await this.waitFor(() => this.request !== null || this.winner !== null || this.engineError);
+  async waitUntilComplete() {
+    await this.waitFor(() => this.winner !== null || this.engineError);
     if (this.engineError) throw new Error(this.engineError);
   }
 

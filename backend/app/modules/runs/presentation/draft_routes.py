@@ -4,8 +4,8 @@ from uuid import UUID
 
 from fastapi import APIRouter, Depends, HTTPException
 
-from app.db.models.user import User
-from app.modules.accounts.presentation.dependencies import get_current_user
+from app.modules.runs.domain.ownership import RunOwner
+from app.modules.runs.presentation.ownership import require_run_owner
 from app.modules.runs.application.draft_service import (
     DraftCompleted,
     DraftError,
@@ -41,11 +41,11 @@ def _raise_draft_http_error(error: DraftError) -> None:
 @router.get("/{run_id}/draft", response_model=DraftRoundResponse)
 async def read_draft_round(
     run_id: UUID,
-    user: User = Depends(get_current_user),
+    owner: RunOwner = Depends(require_run_owner),
     service: DraftService = Depends(get_configured_draft_service),
 ) -> DraftRoundResponse:
     try:
-        result = await service.get_current_round(user_id=user.id, run_id=run_id)
+        result = await service.get_current_round(owner=owner, run_id=run_id)
     except DraftError as exc:
         _raise_draft_http_error(exc)
     return DraftRoundResponse.from_view(result)
@@ -54,11 +54,11 @@ async def read_draft_round(
 @router.post("/{run_id}/draft/reroll", response_model=DraftRoundResponse)
 async def reroll_draft_round(
     run_id: UUID,
-    user: User = Depends(get_current_user),
+    owner: RunOwner = Depends(require_run_owner),
     service: DraftService = Depends(get_configured_draft_service),
 ) -> DraftRoundResponse:
     try:
-        result = await service.reroll_current_round(user_id=user.id, run_id=run_id)
+        result = await service.reroll_current_round(owner=owner, run_id=run_id)
     except DraftError as exc:
         _raise_draft_http_error(exc)
     return DraftRoundResponse.from_view(result)
@@ -68,12 +68,12 @@ async def reroll_draft_round(
 async def choose_draft_option(
     run_id: UUID,
     payload: SelectDraftOptionRequest,
-    user: User = Depends(get_current_user),
+    owner: RunOwner = Depends(require_run_owner),
     service: DraftService = Depends(get_configured_draft_service),
 ) -> DraftSelectionResponse:
     try:
         result = await service.select_option(
-            user_id=user.id,
+            owner=owner,
             run_id=run_id,
             option_number=payload.option_number,
         )

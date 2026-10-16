@@ -61,7 +61,10 @@ async def register(
         ) from exc
     try:
         user = await register_account(
-            session, email=str(payload.email), password=payload.password
+            session,
+            trainer_name=payload.trainer_name or str(payload.email).split("@", 1)[0],
+            email=str(payload.email),
+            password=payload.password,
         )
     except EmailAlreadyRegistered as exc:
         raise HTTPException(

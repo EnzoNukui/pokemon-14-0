@@ -22,6 +22,8 @@ from app.modules.runs.domain.rules import (
     REROLLS_PER_RUN,
 )
 from app.modules.runs.domain.states import RunStage, RunStatus
+from app.modules.runs.application.ownership import run_owner_condition
+from app.modules.runs.domain.ownership import RunOwner
 
 
 class DraftError(Exception):
@@ -65,6 +67,7 @@ class DraftOptionView:
     is_mythical: bool
     is_pseudo_legendary: bool
     front_sprite_url: str | None
+    national_dex_number: int | None
 
 
 @dataclass(frozen=True, slots=True)
@@ -72,6 +75,7 @@ class DraftRoundView:
     round_number: int
     display_set: int
     reroll_available: bool
+    legendary_selected: bool
     options: tuple[DraftOptionView, ...]
 
 
@@ -92,9 +96,10 @@ class DraftService:
         self._session = session
         self._policy = policy
 
-    async def get_current_round(self, *, user_id: UUID, run_id: UUID) -> DraftRoundView:
+    async def get_current_round(self, *, owner: RunOwner, run_id: UUID) -> DraftRoundView:
         async with self._session.begin():
-            run = await self._get_locked_draft_run(user_id=user_id, run_id=run_id)
+            run = await self._get_locked_draft_run(owner=owner, run_id=run_id)
+            await self._sync_legendary_selection(run)
             round_number = await self._next_round_number(run_id)
             if round_number > DRAFT_ROUNDS:
                 raise DraftCompleted("All six draft rounds have already been selected.")
@@ -113,10 +118,11 @@ class DraftService:
             return self._round_view(run, round_number, pending)
 
     async def reroll_current_round(
-        self, *, user_id: UUID, run_id: UUID
+        self, *, owner: RunOwner, run_id: UUID
     ) -> DraftRoundView:
         async with self._session.begin():
-            run = await self._get_locked_draft_run(user_id=user_id, run_id=run_id)
+            run = await self._get_locked_draft_run(owner=owner, run_id=run_id)
+            await self._sync_legendary_selection(run)
             if run.reroll_used or REROLLS_PER_RUN == 0:
                 raise RerollUnavailable("The run's one reroll has already been used.")
 
@@ -148,7 +154,7 @@ class DraftService:
     async def select_option(
         self,
         *,
-        user_id: UUID,
+        owner: RunOwner,
         run_id: UUID,
         option_number: int,
     ) -> DraftSelectionView:
@@ -156,7 +162,7 @@ class DraftService:
             raise InvalidDraftSelection("Option number must be between 1 and 6.")
 
         async with self._session.begin():
-            run = await self._get_locked_draft_run(user_id=user_id, run_id=run_id)
+            run = await self._get_locked_draft_run(owner=owner, run_id=run_id)
             round_number = await self._next_round_number(run_id)
             if round_number > DRAFT_ROUNDS:
                 raise DraftCompleted("All six draft rounds have already been selected.")
@@ -178,9 +184,10 @@ class DraftService:
             selected_option, selected_pokemon = selected
 
             is_rare = selected_pokemon.is_legendary or selected_pokemon.is_mythical
+            await self._sync_legendary_selection(run)
             if is_rare and run.legendary_selected:
                 raise InvalidDraftSelection(
-                    "A run can select only one Legendary or Mythical Pokémon."
+                    "Não é possível ter mais de um lendário ou mítico no time."
                 )
 
             build = await self._get_default_build(selected_pokemon.id)
@@ -215,10 +222,10 @@ class DraftService:
                 legendary_selected=run.legendary_selected,
             )
 
-    async def _get_locked_draft_run(self, *, user_id: UUID, run_id: UUID) -> Run:
+    async def _get_locked_draft_run(self, *, owner: RunOwner, run_id: UUID) -> Run:
         run = await self._session.scalar(
             select(Run)
-            .where(Run.id == run_id, Run.user_id == user_id)
+            .where(Run.id == run_id, run_owner_condition(owner))
             .with_for_update()
         )
         if run is None:
@@ -226,6 +233,22 @@ class DraftService:
         if run.status != RunStatus.ACTIVE.value or run.stage != RunStage.DRAFT.value:
             raise DraftUnavailable("This run is not accepting draft actions.")
         return run
+
+    async def _sync_legendary_selection(self, run: Run) -> None:
+        if run.legendary_selected:
+            return
+        existing_rare = await self._session.scalar(
+            select(Pokemon.id)
+            .join(TeamPokemon, TeamPokemon.pokemon_id == Pokemon.id)
+            .join(Team, Team.id == TeamPokemon.team_id)
+            .where(
+                Team.run_id == run.id,
+                or_(Pokemon.is_legendary.is_(True), Pokemon.is_mythical.is_(True)),
+            )
+            .limit(1)
+        )
+        if existing_rare is not None:
+            run.legendary_selected = True
 
     async def _next_round_number(self, run_id: UUID) -> int:
         selected_rounds = await self._session.scalars(
@@ -292,7 +315,8 @@ class DraftService:
             if pokemon.is_legendary or pokemon.is_mythical:
                 pools["legendary"].append(pokemon)
             elif pokemon.draft_tier is not None:
-                pools[f"tier:{pokemon.draft_tier}"].append(pokemon)
+                effective_tier = self._effective_draft_tier(pokemon)
+                pools[f"tier:{effective_tier}"].append(pokemon)
 
         available_keys = {
             key: weight
@@ -341,6 +365,40 @@ class DraftService:
 
         await self._session.flush()
         return generated
+
+    @staticmethod
+    def _effective_draft_tier(pokemon: Pokemon) -> int:
+        """Apply a minimum rarity based on competitive viability and base stats."""
+        tier = pokemon.draft_tier or 1
+        if pokemon.is_pseudo_legendary:
+            return max(tier, 5)
+
+        competitive_tier_floors = {
+            "AG": 5,
+            "UBER": 5,
+            "OU": 5,
+            "(OU)": 5,
+            "UUBL": 5,
+            "UU": 4,
+            "RUBL": 4,
+            "RU": 3,
+            "NUBL": 3,
+        }
+        competitive_tier = (pokemon.competitive_tier or "").upper()
+        tier = max(tier, competitive_tier_floors.get(competitive_tier, tier))
+
+        total_base_stats = sum(
+            value
+            for value in (pokemon.base_stats or {}).values()
+            if isinstance(value, (int, float))
+        )
+        if total_base_stats >= 600:
+            return max(tier, 5)
+        if total_base_stats >= 550:
+            return max(tier, 4)
+        if total_base_stats >= 500:
+            return max(tier, 3)
+        return tier
 
     def _selection_weights(
         self, run: Run, pools: dict[str, list[Pokemon]]
@@ -406,6 +464,7 @@ class DraftService:
             round_number=round_number,
             display_set=display_set,
             reroll_available=not run.reroll_used,
+            legendary_selected=run.legendary_selected,
             options=tuple(
                 DraftOptionView(
                     option_number=option.option_number,
@@ -414,11 +473,12 @@ class DraftService:
                     form_name=pokemon.form_name,
                     primary_type=pokemon.primary_type,
                     secondary_type=pokemon.secondary_type,
-                    draft_tier=pokemon.draft_tier,
+                    draft_tier=self._effective_draft_tier(pokemon),
                     is_legendary=pokemon.is_legendary,
                     is_mythical=pokemon.is_mythical,
                     is_pseudo_legendary=pokemon.is_pseudo_legendary,
                     front_sprite_url=pokemon.front_sprite_url,
+                    national_dex_number=pokemon.national_dex_number,
                 )
                 for option, pokemon in rows
             ),

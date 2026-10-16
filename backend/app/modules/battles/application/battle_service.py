@@ -43,11 +43,15 @@ class BattleService:
         return engine_result, events
 
     async def start(
-        self, *, battle: Battle, run_id: UUID, trainer_team_id: UUID
+        self,
+        *,
+        battle: Battle,
+        run_id: UUID,
+        trainer_team_id: UUID,
     ) -> tuple[dict[str, object], tuple[BattleEventView, ...]]:
         player_team = await self._load_player_engine_team(run_id=run_id)
         opponent_name, opponent_team = await self._load_opponent_engine_team(
-            trainer_team_id=trainer_team_id
+            trainer_team_id=trainer_team_id,
         )
         try:
             engine_result = await self._showdown.start_battle(
@@ -129,8 +133,12 @@ class BattleService:
             raise BattleEngineResponseError(
                 "The selected trainer must have a complete six-Pokémon team."
             )
-        team = [
-            to_engine_set(
+        # Trainers need a real offensive boost so poorly drafted teams cannot
+        # coast through the run; Life Orb still costs them HP on each hit.
+        trainer_item = "Life Orb"
+        team = []
+        for member, pokemon in members:
+            engine_set = to_engine_set(
                 pokemon.name,
                 pokemon.form_name,
                 {
@@ -142,8 +150,9 @@ class BattleService:
                     "ivs": member.ivs,
                 },
             )
-            for member, pokemon in members
-        ]
+            if not engine_set["item"]:
+                engine_set["item"] = trainer_item
+            team.append(engine_set)
         return trainer_name, team
 
     @staticmethod

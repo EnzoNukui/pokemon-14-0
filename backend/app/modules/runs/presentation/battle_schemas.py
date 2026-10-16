@@ -21,6 +21,8 @@ class BattlePokemonResponse(BaseModel):
     form_name: str | None
     primary_type: str
     secondary_type: str | None
+    front_sprite_url: str | None
+    national_dex_number: int | None
     nature: str
     ability: str
     held_item: str | None
@@ -37,6 +39,8 @@ class BattlePokemonResponse(BaseModel):
             form_name=view.form_name,
             primary_type=view.primary_type,
             secondary_type=view.secondary_type,
+            front_sprite_url=view.front_sprite_url,
+            national_dex_number=view.national_dex_number,
             nature=view.nature,
             ability=view.ability,
             held_item=view.held_item,

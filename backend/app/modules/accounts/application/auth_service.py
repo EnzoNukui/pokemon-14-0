@@ -21,7 +21,7 @@ def normalize_email(email: str) -> str:
 
 
 async def register_account(
-    session: AsyncSession, *, email: str, password: str
+    session: AsyncSession, *, trainer_name: str, email: str, password: str
 ) -> User:
     normalized_email = normalize_email(email)
     existing_user = await session.scalar(
@@ -30,7 +30,11 @@ async def register_account(
     if existing_user is not None:
         raise EmailAlreadyRegistered
 
-    user = User(email=normalized_email, password_hash=hash_password(password))
+    user = User(
+        trainer_name=trainer_name.strip(),
+        email=normalized_email,
+        password_hash=hash_password(password),
+    )
     session.add(user)
     try:
         await session.commit()

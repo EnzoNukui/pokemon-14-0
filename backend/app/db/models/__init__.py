@@ -2,6 +2,7 @@
 
 from app.db.models.battle import Battle
 from app.db.models.champion import ChampionHistory, CurrentChampion, HallOfFame
+from app.db.models.guest_session import GuestSession
 from app.db.models.pokemon import Pokemon, PokemonBuild
 from app.db.models.run import Run, RunDraftOption
 from app.db.models.team import Team, TeamPokemon
@@ -13,6 +14,7 @@ __all__ = [
     "ChampionHistory",
     "CurrentChampion",
     "HallOfFame",
+    "GuestSession",
     "Pokemon",
     "PokemonBuild",
     "Run",

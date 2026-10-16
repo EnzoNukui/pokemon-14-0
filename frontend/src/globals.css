@@ -1,1 +1,115 @@
+/* Pokemon Fire Red by KaelinT (2012), CC BY-SA 3.0. Served by Font Library. */
+@import url('https://fontlibrary.org//face/pokemon');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&display=swap');
 @import "tailwindcss";
+
+@theme {
+  /* Paleta principal: papel claro, vermelho de identidade e texto grafite. */
+  --color-paper: #fff9f0;
+  --color-surface: #fffdf9;
+  --color-surface-muted: #f4ede3;
+  --color-brand: #cf2435;
+  --color-brand-strong: #a91e2b;
+  --color-brand-soft: #f8e1e3;
+  --color-accent: #789875;
+  --color-accent-strong: #5f805d;
+  --color-accent-soft: #e6eee3;
+  --color-graphite: #35353a;
+  --color-graphite-muted: #68666a;
+  --color-border: #e6d9ca;
+  --color-focus: #d8a23e;
+  --color-danger: #b93838;
+
+  /* Fredoka mantém o visual amigável e legível; Fire Red destaca os títulos. */
+  --font-sans: "Fredoka", "Trebuchet MS", sans-serif;
+  --font-display: "PokemonFireRedRegular", "Courier New", monospace;
+
+  --radius-card: 1rem;
+  --radius-control: 0.75rem;
+  --shadow-card: 0 4px 0 rgb(53 53 58 / 8%), 0 10px 24px rgb(53 53 58 / 7%);
+  --shadow-pixel: 4px 4px 0 rgb(53 53 58 / 16%);
+}
+
+:root {
+  color-scheme: light;
+  font-family: var(--font-sans);
+  color: var(--color-graphite);
+  background: var(--color-paper);
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-width: 320px;
+  min-height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  color: var(--color-graphite);
+  background: var(--color-paper);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+h1,
+h2 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+button,
+input,
+select,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+button,
+a,
+input,
+select,
+textarea {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  color: inherit;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--color-focus);
+  outline-offset: 3px;
+}
+
+::selection {
+  color: var(--color-graphite);
+  background: var(--color-brand-soft);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

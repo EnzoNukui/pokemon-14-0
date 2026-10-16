@@ -28,5 +28,5 @@ class DraftProbabilityPolicy:
         expected_total = Decimal("1") - LEGENDARY_OFFER_PROBABILITY
         if sum(self.tier_weights.values(), Decimal("0")) != expected_total:
             raise ValueError(
-                "tier weights must total 0.95 because legendary offers have 5% probability"
+                "tier weights must total 0.99 because legendary offers have 1% probability"
             )

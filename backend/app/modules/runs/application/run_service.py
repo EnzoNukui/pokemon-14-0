@@ -15,11 +15,15 @@ from app.db.models.run import Run
 from app.db.models.team import Team, TeamPokemon
 from app.modules.battles.application.battle_service import BattleService
 from app.modules.championship.application.championship_service import (
+    ChampionshipConfigurationError,
     ChampionHistoryView,
     get_champion_for_run,
     get_run_hall_of_fame_snapshot,
+    record_run_completion,
 )
 from app.modules.runs.domain.states import RunStage, RunStatus
+from app.modules.runs.application.ownership import run_owner_condition
+from app.modules.runs.domain.ownership import RunOwner
 
 
 class ActiveRunAlreadyExists(Exception):
@@ -28,6 +32,10 @@ class ActiveRunAlreadyExists(Exception):
 
 class RunDoesNotExist(Exception):
     """No run belonging to the account matches the request."""
+
+
+class RunNotCompleted(Exception):
+    """Only a successfully completed run can be submitted to the ranking."""
 
 
 @dataclass(frozen=True, slots=True)
@@ -56,6 +64,9 @@ class TeamMemberView:
     pokemon_name: str
     primary_type: str
     secondary_type: str | None
+    front_sprite_url: str | None
+    back_sprite_url: str | None
+    national_dex_number: int | None
     build_snapshot: dict[str, object]
 
 
@@ -72,10 +83,10 @@ def to_run_view(run: Run) -> RunView:
     )
 
 
-async def create_run(session: AsyncSession, *, user_id: UUID) -> RunView:
+async def create_run(session: AsyncSession, *, owner: RunOwner) -> RunView:
     existing = await session.scalar(
         select(Run.id).where(
-            Run.user_id == user_id,
+            run_owner_condition(owner),
             Run.status == RunStatus.ACTIVE.value,
         )
     )
@@ -83,7 +94,8 @@ async def create_run(session: AsyncSession, *, user_id: UUID) -> RunView:
         raise ActiveRunAlreadyExists
 
     run = Run(
-        user_id=user_id,
+        user_id=owner.user_id,
+        guest_session_id=owner.guest_session_id,
         status=RunStatus.ACTIVE.value,
         stage=RunStage.DRAFT.value,
         progress_index=0,
@@ -100,10 +112,10 @@ async def create_run(session: AsyncSession, *, user_id: UUID) -> RunView:
     return to_run_view(run)
 
 
-async def get_current_run(session: AsyncSession, *, user_id: UUID) -> RunView:
+async def get_current_run(session: AsyncSession, *, owner: RunOwner) -> RunView:
     run = await session.scalar(
         select(Run)
-        .where(Run.user_id == user_id, Run.status == RunStatus.ACTIVE.value)
+        .where(run_owner_condition(owner), Run.status == RunStatus.ACTIVE.value)
         .order_by(Run.created_at.desc())
     )
     if run is None:
@@ -133,11 +145,9 @@ async def get_run_history(
 
 
 async def get_run_outcome(
-    session: AsyncSession, *, user_id: UUID, run_id: UUID
+    session: AsyncSession, *, owner: RunOwner, run_id: UUID
 ) -> RunOutcomeView:
-    run = await session.scalar(
-        select(Run).where(Run.id == run_id, Run.user_id == user_id)
-    )
+    run = await session.scalar(select(Run).where(Run.id == run_id, run_owner_condition(owner)))
     if run is None:
         raise RunDoesNotExist
     return RunOutcomeView(
@@ -150,13 +160,13 @@ async def get_run_outcome(
 
 
 async def abandon_run(
-    session: AsyncSession, *, user_id: UUID, run_id: UUID
+    session: AsyncSession, *, owner: RunOwner, run_id: UUID
 ) -> RunView:
     run = await session.scalar(
         select(Run)
         .where(
             Run.id == run_id,
-            Run.user_id == user_id,
+            run_owner_condition(owner),
             Run.status == RunStatus.ACTIVE.value,
         )
         .with_for_update()
@@ -179,10 +189,10 @@ async def abandon_run(
 
 
 async def get_run_team(
-    session: AsyncSession, *, user_id: UUID, run_id: UUID
+    session: AsyncSession, *, owner: RunOwner, run_id: UUID
 ) -> tuple[TeamMemberView, ...]:
     owned_run = await session.scalar(
-        select(Run.id).where(Run.id == run_id, Run.user_id == user_id)
+        select(Run.id).where(Run.id == run_id, run_owner_condition(owner))
     )
     if owned_run is None:
         raise RunDoesNotExist
@@ -201,7 +211,41 @@ async def get_run_team(
             pokemon_name=pokemon.name,
             primary_type=pokemon.primary_type,
             secondary_type=pokemon.secondary_type,
+            front_sprite_url=pokemon.front_sprite_url,
+            back_sprite_url=pokemon.back_sprite_url,
+            national_dex_number=pokemon.national_dex_number,
             build_snapshot=member.build_snapshot,
         )
         for member, pokemon in rows.all()
     )
+
+
+async def claim_completed_guest_run(
+    session: AsyncSession,
+    *,
+    user_id: UUID,
+    guest_session_id: UUID,
+    run_id: UUID,
+) -> None:
+    async with session.begin():
+        run = await session.scalar(
+            select(Run)
+            .where(
+                Run.id == run_id,
+                Run.user_id.is_(None),
+                Run.guest_session_id == guest_session_id,
+            )
+            .with_for_update()
+        )
+        if run is None:
+            raise RunDoesNotExist
+        if run.status != RunStatus.COMPLETED.value:
+            raise RunNotCompleted
+
+        run.user_id = user_id
+        run.guest_session_id = None
+        await record_run_completion(
+            session,
+            run=run,
+            completed_at=run.ended_at or datetime.now(timezone.utc),
+        )

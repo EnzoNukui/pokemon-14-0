@@ -37,6 +37,19 @@ class RunResponse(BaseModel):
         )
 
 
+class StartRunResponse(RunResponse):
+    guest_session_token: str | None = None
+
+    @classmethod
+    def from_view(
+        cls, view: RunView, *, guest_session_token: str | None = None
+    ) -> "StartRunResponse":
+        return cls(
+            **RunResponse.from_view(view).model_dump(),
+            guest_session_token=guest_session_token,
+        )
+
+
 class RunOutcomeResponse(BaseModel):
     run: RunResponse
     hall_of_fame_snapshot: dict[str, object] | None
@@ -59,6 +72,9 @@ class TeamMemberResponse(BaseModel):
     pokemon_name: str
     primary_type: str
     secondary_type: str | None
+    front_sprite_url: str | None
+    back_sprite_url: str | None
+    national_dex_number: int | None
     build_snapshot: dict[str, object]
 
     @classmethod
@@ -69,5 +85,8 @@ class TeamMemberResponse(BaseModel):
             pokemon_name=view.pokemon_name,
             primary_type=view.primary_type,
             secondary_type=view.secondary_type,
+            front_sprite_url=view.front_sprite_url,
+            back_sprite_url=view.back_sprite_url,
+            national_dex_number=view.national_dex_number,
             build_snapshot=view.build_snapshot,
         )

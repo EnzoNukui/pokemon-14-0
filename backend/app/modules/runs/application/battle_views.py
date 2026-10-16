@@ -14,6 +14,8 @@ class OpponentPokemonView:
     form_name: str | None
     primary_type: str
     secondary_type: str | None
+    front_sprite_url: str | None
+    national_dex_number: int | None
     nature: str
     ability: str
     held_item: str | None

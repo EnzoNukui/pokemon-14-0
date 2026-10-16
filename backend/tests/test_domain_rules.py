@@ -49,20 +49,20 @@ class RunRulesTests(unittest.TestCase):
 
 
 class DraftPolicyTests(unittest.TestCase):
-    def test_approved_tier_weights_total_95_percent(self) -> None:
+    def test_approved_tier_weights_total_99_percent(self) -> None:
         policy = DraftProbabilityPolicy(
             tier_weights={
-                1: Decimal("0.05"),
-                2: Decimal("0.10"),
-                3: Decimal("0.15"),
-                4: Decimal("0.35"),
-                5: Decimal("0.30"),
+                1: Decimal("0.12"),
+                2: Decimal("0.32"),
+                3: Decimal("0.40"),
+                4: Decimal("0.10"),
+                5: Decimal("0.05"),
             }
         )
 
-        self.assertEqual(sum(policy.tier_weights.values()), Decimal("0.95"))
+        self.assertEqual(sum(policy.tier_weights.values()), Decimal("0.99"))
 
-    def test_policy_rejects_weights_that_do_not_total_95_percent(self) -> None:
+    def test_policy_rejects_weights_that_do_not_total_99_percent(self) -> None:
         with self.assertRaises(ValueError):
             DraftProbabilityPolicy(
                 tier_weights={tier: Decimal("0.20") for tier in range(1, 6)}

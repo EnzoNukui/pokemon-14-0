@@ -24,7 +24,7 @@ class Settings(BaseSettings):
     auth_secret_key: SecretStr | None = None
     access_token_expire_minutes: int = Field(default=30, gt=0, le=10080)
     battle_engine_url: str = "http://127.0.0.1:3001"
-    battle_engine_timeout_seconds: float = Field(default=15, gt=0, le=120)
+    battle_engine_timeout_seconds: float = Field(default=60, gt=0, le=120)
     draft_tier_1_percent: Decimal | None = None
     draft_tier_2_percent: Decimal | None = None
     draft_tier_3_percent: Decimal | None = None

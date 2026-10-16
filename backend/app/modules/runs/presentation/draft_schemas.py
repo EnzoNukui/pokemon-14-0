@@ -23,6 +23,7 @@ class DraftOptionResponse(BaseModel):
     is_mythical: bool
     is_pseudo_legendary: bool
     front_sprite_url: str | None
+    national_dex_number: int | None
 
     @classmethod
     def from_view(cls, view: DraftOptionView) -> "DraftOptionResponse":
@@ -38,6 +39,7 @@ class DraftOptionResponse(BaseModel):
             is_mythical=view.is_mythical,
             is_pseudo_legendary=view.is_pseudo_legendary,
             front_sprite_url=view.front_sprite_url,
+            national_dex_number=view.national_dex_number,
         )
 
 
@@ -45,6 +47,7 @@ class DraftRoundResponse(BaseModel):
     round_number: int
     display_set: int
     reroll_available: bool
+    legendary_selected: bool
     options: list[DraftOptionResponse]
 
     @classmethod
@@ -53,6 +56,7 @@ class DraftRoundResponse(BaseModel):
             round_number=view.round_number,
             display_set=view.display_set,
             reroll_available=view.reroll_available,
+            legendary_selected=view.legendary_selected,
             options=[DraftOptionResponse.from_view(option) for option in view.options],
         )
 

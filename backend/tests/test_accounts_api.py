@@ -32,11 +32,11 @@ TEST_DATABASE_URL = os.environ.get("POKEMON_TEST_DATABASE_URL")
 get_settings.cache_clear()
 DRAFT_POLICY = DraftProbabilityPolicy(
     tier_weights={
-        1: Decimal("0.05"),
-        2: Decimal("0.10"),
-        3: Decimal("0.15"),
-        4: Decimal("0.35"),
-        5: Decimal("0.30"),
+        1: Decimal("0.12"),
+        2: Decimal("0.32"),
+        3: Decimal("0.40"),
+        4: Decimal("0.10"),
+        5: Decimal("0.05"),
     }
 )
 

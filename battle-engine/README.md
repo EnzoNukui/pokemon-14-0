@@ -1,6 +1,6 @@
 # Engine de batalhas
 
-Este serviço Node.js mantém sessões temporárias de Pokémon Showdown. Ele executa uma batalha e devolve requisições do jogador, resultado e eventos em tempo real; o back-end Python é responsável pela sequência da run e pela persistência dos resultados.
+Este serviço Node.js mantém sessões temporárias de Pokémon Showdown. Uma IA tática escolhe movimentos por poder, precisão, STAB e efetividade de tipos, e troca apenas diante de uma desvantagem clara ou risco de nocaute. Após uma troca tática, ela evita voltar ao Pokémon anterior contra o mesmo adversário. O back-end Python equipa os times dos treinadores com Life Orb quando o conjunto não define outro item.
 
 ## Organização do código
 
@@ -10,7 +10,7 @@ Este serviço Node.js mantém sessões temporárias de Pokémon Showdown. Ele ex
 - `src/showdown/`: criação dos streams do simulador e observação das respostas.
 - `src/protocol/`: interpretação das linhas do protocolo em eventos e pedidos do jogador.
 - `src/teams/`: serialização dos times para o formato aceito pelo Showdown.
-- `src/ai/`: inicialização do oponente aleatório usado atualmente.
+- `src/ai/`: avaliação de movimentos e escolhas estratégicas dos dois lados da batalha.
 - `scripts/`: validação de builds e exportação dos tiers Gen IX.
 
 As batalhas e a validação de builds usam `gen9nationaldexag`, que aceita equipes com espécies das gerações I a IX. O catálogo base do backend cobre os 1025 números da Pokédex Nacional; formas alternativas necessárias aos times são armazenadas como entradas próprias.

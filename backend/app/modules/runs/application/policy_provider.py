@@ -7,7 +7,7 @@ from app.modules.runs.domain.draft_policy import DraftProbabilityPolicy
 
 
 class DraftProbabilityConfigurationError(Exception):
-    """The five tier percentages are missing or do not total 95%."""
+    """The five tier percentages are missing or do not total 99%."""
 
 
 def get_draft_probability_policy(
@@ -34,5 +34,5 @@ def get_draft_probability_policy(
         return DraftProbabilityPolicy(tier_weights=weights)
     except ValueError as exc:
         raise DraftProbabilityConfigurationError(
-            "Draft tier percentages must be non-negative and total 95%."
+            "Draft tier percentages must be non-negative and total 99%."
         ) from exc

@@ -1,8 +1,8 @@
 'use strict';
 
 const { BattleStream, getPlayerStreams } = require('pokemon-showdown');
-const { startRandomOpponent } = require('../ai/random_opponent.cjs');
-const { observeBattleLog, observePlayerRequests } = require('./stream_observers.cjs');
+const { startStrategicPlayer } = require('../ai/strategic_player.cjs');
+const { observeBattleLog } = require('./stream_observers.cjs');
 
 function createBattleStreams(input, session) {
   const battle = new BattleStream({ keepAlive: true });
@@ -10,9 +10,9 @@ function createBattleStreams(input, session) {
   const signal = () => session.signal();
   const opponentName = String(input.opponent.name || 'Trainer').slice(0, 18);
 
-  startRandomOpponent(streams.p2, session, signal);
+  startStrategicPlayer(streams.p1, session, 'p1', 'player');
+  startStrategicPlayer(streams.p2, session, 'p2', 'trainer');
   observeBattleLog(streams.omniscient, session, opponentName, signal);
-  observePlayerRequests(streams.p1, session, signal);
 
   const player = { name: session.playerName, team: session.teams.player };
   const opponent = { name: opponentName, team: session.teams.opponent };
