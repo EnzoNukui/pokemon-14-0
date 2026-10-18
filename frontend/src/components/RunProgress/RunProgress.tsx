@@ -8,7 +8,7 @@ const stages = [
 
 export default function RunProgress() {
   return (
-    <section aria-label="Etapas da run" className="mx-auto w-full max-w-[90rem] px-4 sm:px-8">
+    <section id="run-progress" aria-label="Etapas da run" className="mx-auto w-full max-w-[90rem] px-4 sm:px-8">
       <ol className="m-0 grid list-none overflow-hidden rounded-xl border-[3px] border-[#102f5b] bg-white p-2 shadow-[0_3px_0_#102f5b] sm:grid-cols-3 sm:p-3">
         {stages.map((stage, index) => (
           <li

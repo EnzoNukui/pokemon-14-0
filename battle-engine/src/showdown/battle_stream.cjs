@@ -9,9 +9,10 @@ function createBattleStreams(input, session) {
   const streams = getPlayerStreams(battle);
   const signal = () => session.signal();
   const opponentName = String(input.opponent.name || 'Trainer').slice(0, 18);
+  const opponentCategory = input.opponent.category || 'CHAMPION';
 
   startStrategicPlayer(streams.p1, session, 'p1', 'player');
-  startStrategicPlayer(streams.p2, session, 'p2', 'trainer');
+  startStrategicPlayer(streams.p2, session, 'p2', opponentCategory);
   observeBattleLog(streams.omniscient, session, opponentName, signal);
 
   const player = { name: session.playerName, team: session.teams.player };

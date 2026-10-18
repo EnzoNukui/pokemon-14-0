@@ -13,6 +13,7 @@ from app.db.models.champion import ChampionHistory, CurrentChampion, HallOfFame
 from app.db.models.pokemon import Pokemon
 from app.db.models.run import Run
 from app.db.models.team import Team, TeamPokemon
+from app.db.models.user import User
 
 
 class ChampionshipConfigurationError(Exception):
@@ -28,6 +29,23 @@ class ChampionHistoryView:
     run_id: UUID | None
     became_champion_at: datetime
     lost_championship_at: datetime | None
+
+
+@dataclass(frozen=True, slots=True)
+class ChampionRankingPokemonView:
+    pokemon_id: UUID
+    pokemon_name: str
+    front_sprite_url: str | None
+    national_dex_number: int | None
+
+
+@dataclass(frozen=True, slots=True)
+class ChampionRankingEntryView:
+    id: UUID
+    trainer_name: str
+    completed_battles: int
+    completed_at: datetime
+    team: tuple[ChampionRankingPokemonView, ...]
 
 
 def _to_history_view(entry: ChampionHistory) -> ChampionHistoryView:
@@ -168,6 +186,56 @@ async def get_champion_history(
         .limit(limit)
     )
     return tuple(_to_history_view(entry) for entry in rows.all())
+
+
+async def get_champion_ranking(
+    session: AsyncSession, *, limit: int = 5
+) -> tuple[ChampionRankingEntryView, ...]:
+    rows = await session.execute(
+        select(HallOfFame, User.trainer_name, Run.progress_index)
+        .join(User, User.id == HallOfFame.user_id)
+        .join(Run, Run.id == HallOfFame.run_id)
+        .order_by(HallOfFame.completed_at.desc())
+        .limit(limit)
+    )
+    champions = rows.all()
+    if not champions:
+        return ()
+
+    team_ids = [entry.team_id for entry, _, _ in champions]
+    team_rows = await session.execute(
+        select(
+            TeamPokemon.team_id,
+            Pokemon.id,
+            Pokemon.name,
+            Pokemon.front_sprite_url,
+            Pokemon.national_dex_number,
+        )
+        .join(Pokemon, Pokemon.id == TeamPokemon.pokemon_id)
+        .where(TeamPokemon.team_id.in_(team_ids))
+        .order_by(TeamPokemon.team_id, TeamPokemon.slot_number)
+    )
+    teams: dict[UUID, list[ChampionRankingPokemonView]] = {}
+    for team_id, pokemon_id, name, sprite_url, dex_number in team_rows.all():
+        teams.setdefault(team_id, []).append(
+            ChampionRankingPokemonView(
+                pokemon_id=pokemon_id,
+                pokemon_name=name,
+                front_sprite_url=sprite_url,
+                national_dex_number=dex_number,
+            )
+        )
+
+    return tuple(
+        ChampionRankingEntryView(
+            id=entry.id,
+            trainer_name=trainer_name,
+            completed_battles=completed_battles,
+            completed_at=entry.completed_at,
+            team=tuple(teams.get(entry.team_id, ())),
+        )
+        for entry, trainer_name, completed_battles in champions
+    )
 
 
 async def get_run_hall_of_fame_snapshot(

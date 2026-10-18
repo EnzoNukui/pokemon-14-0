@@ -27,6 +27,7 @@ class ShowdownClient:
         player_name: str,
         player_team: list[dict[str, Any]],
         opponent_name: str,
+        opponent_category: str,
         opponent_team: list[dict[str, Any]],
         battle_format: str,
     ) -> dict[str, Any]:
@@ -37,7 +38,11 @@ class ShowdownClient:
                 "battle_id": str(battle_id),
                 "format": battle_format,
                 "player": {"name": player_name, "team": player_team},
-                "opponent": {"name": opponent_name, "team": opponent_team},
+                "opponent": {
+                    "name": opponent_name,
+                    "category": opponent_category,
+                    "team": opponent_team,
+                },
             },
         )
 

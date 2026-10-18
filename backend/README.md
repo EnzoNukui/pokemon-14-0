@@ -40,7 +40,7 @@ Copy the generated value into `.env`; do not commit it. The example configuratio
 
 The first pure domain rules are in `app/modules/runs/domain/` and `app/modules/battles/domain/`. They record the agreed draft size, reroll and legendary limits, the 13-battle path (8 Gym Leaders, 4 Elite Four members, then the Champion), and the conversion of a simulator draw into a run loss. Run progression is modeled independently from HTTP and database code so the API and persistence layers can call the same rules later.
 
-The draft weights are configured in the repository root `.env`: Tier 1: 5%, Tier 2: 10%, Tier 3: 15%, Tier 4: 35%, Tier 5: 30%, and Legendary/Mythical offers: 5%.
+The draft weights are configured in the repository root `.env`: Tier 1: 35%, Tier 2: 38%, Tier 3: 20%, Tier 4: 4%, Tier 5: 2%, and Legendary/Mythical offers: 1%.
 
 ## Showdown battle engine
 

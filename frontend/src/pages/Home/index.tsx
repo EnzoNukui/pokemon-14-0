@@ -1,3 +1,4 @@
+import { useEffect, useState } from 'react'
 import { FaChevronRight } from 'react-icons/fa'
 import { TbPokeball } from 'react-icons/tb'
 import { Link } from 'react-router'
@@ -6,16 +7,48 @@ import PokemonSprite from '../../components/PokemonSprite/PokemonSprite'
 import PokemonTeam from '../../components/PokemonTeam/PokemonTeam'
 import RunProgress from '../../components/RunProgress/RunProgress'
 import { ROUTES } from '../../routes/paths'
+import { getChampionRanking } from '../../service/championshipService'
+import type { ChampionRankingEntry } from '../../types/championship'
 
 type ChampionSummary = {
   trainer: string
   completedAt: string
-  team: { name: string; pokedexNumber: number }[]
+  team: { name: string; pokedexNumber: number | undefined; spriteUrl: string | null }[]
 }
 
-const latestChampion: ChampionSummary | null = null
+function toChampionSummary(entry: ChampionRankingEntry): ChampionSummary {
+  return {
+    trainer: entry.trainer_name,
+    completedAt: new Intl.DateTimeFormat('pt-BR', { dateStyle: 'short' }).format(new Date(entry.completed_at)),
+    team: entry.team.map((pokemon) => ({
+      name: pokemon.pokemon_name,
+      pokedexNumber: pokemon.national_dex_number ?? undefined,
+      spriteUrl: pokemon.front_sprite_url,
+    })),
+  }
+}
 
 export default function HomePage() {
+  const [latestChampion, setLatestChampion] = useState<ChampionSummary | null>(null)
+  const [championLoading, setChampionLoading] = useState(true)
+  const [championUnavailable, setChampionUnavailable] = useState(false)
+
+  useEffect(() => {
+    let cancelled = false
+    getChampionRanking(1)
+      .then(([entry]) => {
+        if (!cancelled && entry) setLatestChampion(toChampionSummary(entry))
+      })
+      .catch(() => {
+        if (!cancelled) setChampionUnavailable(true)
+      })
+      .finally(() => {
+        if (!cancelled) setChampionLoading(false)
+      })
+
+    return () => { cancelled = true }
+  }, [])
+
   return (
     <div className="pb-10 sm:pb-14">
       <section className="mx-auto grid w-full max-w-[90rem] grid-cols-1 items-center gap-9 px-4 py-10 sm:px-8 sm:py-12 lg:grid-cols-[1fr_1fr] lg:gap-12 lg:py-14">
@@ -31,11 +64,11 @@ export default function HomePage() {
 
           <h1 className="m-0 !font-[Impact,Arial_Narrow,sans-serif] text-5xl uppercase leading-[0.94] tracking-tight text-[#102f5b] sm:text-6xl xl:text-7xl">
             <span className="block">Monte seu time.</span>
-            <span className="mt-1 block text-brand">Vença 14 batalhas.</span>
+            <span className="mt-1 block text-brand">Vença 13 batalhas.</span>
           </h1>
 
           <p className="mb-0 mt-4 max-w-xl font-sans text-lg leading-snug text-[#28649a] sm:mt-5 sm:text-xl">
-            Escolha 6 Pokémon e enfrente 14 treinadores até se tornar o novo campeão.
+            Escolha 6 Pokémon e enfrente 13 treinadores até se tornar o novo campeão.
           </p>
 
           <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 sm:mt-8">
@@ -43,7 +76,7 @@ export default function HomePage() {
               Começar run
               <FaChevronRight aria-hidden="true" className="text-sm" />
             </ActionLink>
-            <ActionLink to={ROUTES.play} variant="secondary">
+            <ActionLink to="/#run-progress" variant="secondary">
               Como funciona
               <FaChevronRight aria-hidden="true" className="text-sm" />
             </ActionLink>
@@ -95,12 +128,22 @@ export default function HomePage() {
                     key={pokemon.name}
                     className="flex min-w-0 flex-col items-center justify-end text-center text-xs text-[#28649a] sm:text-sm"
                   >
-                    <PokemonSprite name={pokemon.name} pokedexNumber={pokemon.pokedexNumber} size="compact" />
+                    <PokemonSprite name={pokemon.name} pokedexNumber={pokemon.pokedexNumber} spriteUrl={pokemon.spriteUrl} size="compact" />
                     <span className="mt-0.5">{pokemon.name}</span>
                   </li>
                 ))}
               </ul>
             </>
+          )}
+
+          {!latestChampion && (
+            <p aria-live="polite" className="mb-0 flex-1 py-2 text-sm text-[#28649a] lg:px-6">
+              {championLoading
+                ? 'Carregando campeão…'
+                : championUnavailable
+                  ? 'Não foi possível carregar o campeão agora.'
+                  : 'Ainda não há um campeão registrado.'}
+            </p>
           )}
 
           <div className="flex justify-end border-t border-[#102f5b]/30 pt-4 lg:ml-3 lg:border-l lg:border-t-0 lg:pl-6 lg:pt-0">

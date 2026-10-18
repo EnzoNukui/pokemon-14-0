@@ -7,6 +7,5 @@ export const ROUTES = {
   battle: '/play/battle',
   resultPattern: '/runs/:runId/result',
   resultForRun: (runId: string) => `/runs/${runId}/result`,
-  history: '/history',
   hallOfFame: '/hall-of-fame',
 } as const

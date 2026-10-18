@@ -1,8 +1,10 @@
 import type { AuthSession } from '../types/account'
 import type {
+  ChampionChallenge,
   DraftOption,
   DraftRound,
   DraftSelection,
+  RunOutcome,
   RunResponse,
   RunSession,
   RunTeamMember,
@@ -156,4 +158,37 @@ export function getRunTeam(run: RunSession, authSession: AuthSession | null): Pr
   return apiRequest<RunTeamMember[]>(`/runs/${run.runId}/team`, {
     headers: getRunHeaders(run, authSession),
   })
+}
+
+export function getRunOutcome(run: RunSession, authSession: AuthSession | null): Promise<RunOutcome> {
+  return apiRequest<RunOutcome>(`/runs/${run.runId}/result`, {
+    headers: getRunHeaders(run, authSession),
+  })
+}
+
+export function challengePreviousChampion(
+  run: RunSession,
+  authSession: AuthSession | null,
+): Promise<ChampionChallenge> {
+  return apiRequest<ChampionChallenge>(`/runs/${run.runId}/champion-challenge`, {
+    method: 'POST',
+    headers: getRunHeaders(run, authSession),
+  })
+}
+
+export function publishCompletedRunToRanking(
+  run: RunSession,
+  authSession: AuthSession,
+): Promise<RunOutcome> {
+  return apiRequest<RunOutcome>(`/runs/${run.runId}/ranking`, {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${authSession.accessToken}`,
+      ...(run.guestSessionToken ? { 'X-Guest-Session': run.guestSessionToken } : {}),
+    },
+  })
+}
+
+export function storeClaimedRunSession(run: RunSession): RunSession {
+  return storeRunSession({ ...run, ownerType: 'account', guestSessionToken: null })
 }

@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react'
 import { FaSignal } from 'react-icons/fa'
 import { TbPokeball } from 'react-icons/tb'
-import { Link } from 'react-router'
+import { Link, useLocation } from 'react-router'
 import { ROUTES } from '../../routes/paths'
 
 type AuthPanelProps = {
@@ -11,6 +11,7 @@ type AuthPanelProps = {
 
 export default function AuthPanel({ mode, children }: AuthPanelProps) {
   const isLogin = mode === 'login'
+  const location = useLocation()
 
   return (
     <section className="mx-auto w-full max-w-5xl px-4 py-8 sm:px-8 sm:py-10">
@@ -54,6 +55,7 @@ export default function AuthPanel({ mode, children }: AuthPanelProps) {
               <Link
                 aria-current={isLogin ? 'page' : undefined}
                 className={`flex min-h-11 items-center justify-center rounded-l-md border-2 border-[#102f5b] px-3 font-display text-base uppercase transition-colors sm:text-lg ${isLogin ? 'bg-brand text-white' : 'bg-[#e9e6df] text-[#102f5b] hover:bg-brand-soft'}`}
+                state={location.state}
                 to={ROUTES.login}
               >
                 Entrar
@@ -61,6 +63,7 @@ export default function AuthPanel({ mode, children }: AuthPanelProps) {
               <Link
                 aria-current={!isLogin ? 'page' : undefined}
                 className={`-ml-0.5 flex min-h-11 items-center justify-center rounded-r-md border-2 border-[#102f5b] px-3 font-display text-base uppercase transition-colors sm:text-lg ${!isLogin ? 'bg-brand text-white' : 'bg-[#e9e6df] text-[#102f5b] hover:bg-brand-soft'}`}
+                state={location.state}
                 to={ROUTES.register}
               >
                 Criar conta

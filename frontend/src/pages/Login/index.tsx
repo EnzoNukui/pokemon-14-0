@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { FaChevronRight, FaEnvelope, FaLock } from 'react-icons/fa'
-import { Link, useNavigate } from 'react-router'
+import { Link, useLocation, useNavigate } from 'react-router'
 import AuthField from '../../components/AuthField/AuthField'
 import AuthPanel from '../../components/AuthPanel/AuthPanel'
 import useAuth from '../../components/AuthProvider/useAuth'
@@ -9,6 +9,7 @@ import { getAuthErrorMessage, login } from '../../service/authService'
 
 export default function LoginPage() {
   const navigate = useNavigate()
+  const location = useLocation()
   const { signIn } = useAuth()
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
@@ -23,7 +24,8 @@ export default function LoginPage() {
     try {
       const response = await login({ email: email.trim(), password })
       signIn(response)
-      navigate(ROUTES.home)
+      const returnTo = (location.state as { returnTo?: unknown } | null)?.returnTo
+      navigate(typeof returnTo === 'string' && returnTo.startsWith('/') ? returnTo : ROUTES.home)
     } catch (submitError) {
       setError(getAuthErrorMessage(submitError, 'login'))
     } finally {
@@ -71,7 +73,7 @@ export default function LoginPage() {
 
         <p className="mb-0 border-t border-[#102f5b]/30 pt-3 text-center text-sm text-[#102f5b] sm:pt-4 sm:text-base">
           Ainda não tem conta?{' '}
-          <Link className="font-semibold text-[#145da0] underline underline-offset-2 hover:text-brand-strong" to={ROUTES.register}>
+          <Link className="font-semibold text-[#145da0] underline underline-offset-2 hover:text-brand-strong" state={location.state} to={ROUTES.register}>
             Criar conta
           </Link>
         </p>

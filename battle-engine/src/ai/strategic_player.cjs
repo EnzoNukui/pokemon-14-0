@@ -67,7 +67,7 @@ function pokemonScore(pokemon, foeTypes) {
 
 class StrategicPlayerAI extends RandomPlayerAI {
   constructor(stream, session, side, profile) {
-    super(stream, { move: 1, mega: profile === 'trainer' ? 0.75 : 0.35 });
+    super(stream, { move: 1, mega: 0 });
     this.session = session;
     this.side = side;
     this.profile = profile;
@@ -139,16 +139,14 @@ class StrategicPlayerAI extends RandomPlayerAI {
     const ownHp = healthRatio(ownPokemon);
 
     const scored = candidates.map((candidate) => {
-      const moveData = active.moves?.[candidate.move.slot - 1];
       return {
         ...candidate,
-        score: scoreMove(candidate.move, ownTypes, foeTypes, ownHp)
-          - (moveData?.pp === 1 ? 0.1 : 0),
+        score: scoreMove(candidate.move, ownTypes, foeTypes, ownHp),
       };
     });
     const highest = Math.max(...scored.map((candidate) => candidate.score));
-    const strongChoices = scored.filter((candidate) => candidate.score >= highest * 0.94);
-    return this.prng.sample(strongChoices).choice;
+    const bestChoices = scored.filter((candidate) => candidate.score === highest);
+    return this.prng.sample(bestChoices).choice;
   }
 
   chooseSwitch(_active, switches) {

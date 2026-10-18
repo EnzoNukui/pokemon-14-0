@@ -1,8 +1,14 @@
 'use strict';
 
+const { Dex } = require('pokemon-showdown');
+
 function normalizeEvent(line) {
   const parts = line.split('|');
-  return { event_type: parts[1] || 'message', payload: { parts: parts.slice(2), line } };
+  const payload = { parts: parts.slice(2), line };
+  if (parts[1] === 'move') {
+    payload.move_type = Dex.moves.get(parts[3]).type;
+  }
+  return { event_type: parts[1] || 'message', payload };
 }
 
 function applyBattleLogLine(line, session, opponentName) {

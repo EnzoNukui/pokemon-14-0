@@ -1,8 +1,14 @@
 """Translate saved Pokémon builds to the Showdown engine set format."""
 
+MAX_IVS = {stat: 31 for stat in ("hp", "atk", "def", "spa", "spd", "spe")}
+
 
 def to_engine_set(
-    name: str, form_name: str | None, build: dict[str, object]
+    name: str,
+    form_name: str | None,
+    build: dict[str, object],
+    *,
+    level: int = 100,
 ) -> dict[str, object]:
     return {
         "species": f"{name}-{form_name}" if form_name else name,
@@ -11,8 +17,8 @@ def to_engine_set(
         "moves": build.get("moves", []),
         "nature": build.get("nature", "Serious"),
         "evs": normalize_engine_stats(build.get("evs", {})),
-        "ivs": normalize_engine_stats(build.get("ivs", {})),
-        "level": 100,
+        "ivs": MAX_IVS.copy(),
+        "level": level,
     }
 
 

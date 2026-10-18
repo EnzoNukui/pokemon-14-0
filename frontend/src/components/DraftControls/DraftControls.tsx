@@ -25,7 +25,7 @@ export default function DraftControls({
           {busyAction === 'select' ? 'Selecionando…' : 'Selecionar'}
         </button>
         <button
-          className="min-h-12 flex-1 border-[3px] border-graphite bg-graphite px-5 font-display text-lg uppercase text-white shadow-[3px_3px_0_#35353a] transition enabled:hover:bg-graphite-muted disabled:cursor-not-allowed disabled:border-graphite/60 disabled:bg-graphite/45"
+          className="min-h-12 flex-1 border-[3px] border-graphite bg-surface px-5 font-display text-lg uppercase text-graphite shadow-[3px_3px_0_#35353a] transition enabled:hover:bg-[#e9e2ce] disabled:cursor-not-allowed disabled:border-graphite/40 disabled:bg-surface/60 disabled:text-graphite/50"
           disabled={!canReroll || busyAction !== null}
           onClick={onReroll}
           type="button"

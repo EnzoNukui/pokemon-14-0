@@ -1,6 +1,6 @@
 # Engine de batalhas
 
-Este serviço Node.js mantém sessões temporárias de Pokémon Showdown. Uma IA tática escolhe movimentos por poder, precisão, STAB e efetividade de tipos, e troca apenas diante de uma desvantagem clara ou risco de nocaute. Após uma troca tática, ela evita voltar ao Pokémon anterior contra o mesmo adversário. O back-end Python equipa os times dos treinadores com Life Orb quando o conjunto não define outro item.
+Este serviço Node.js mantém sessões temporárias de Pokémon Showdown. Uma IA tática escolhe o movimento de maior pontuação com base em poder, precisão, STAB e efetividade de tipos, e troca apenas diante de uma desvantagem clara ou risco de nocaute. Em caso de empate na pontuação, escolhe aleatoriamente entre os melhores movimentos. Após uma troca tática, ela evita voltar ao Pokémon anterior contra o mesmo adversário. Mega Evolução fica desativada para os dois lados. O back-end Python preserva itens definidos nos times; como padrão, não dá item de dano aos Líderes de Ginásio e dá Life Orb aos demais treinadores. Cada evento de ataque informa seu tipo para que o front-end destaque o movimento com a cor correspondente.
 
 ## Organização do código
 

@@ -6,6 +6,10 @@ from uuid import UUID
 from pydantic import BaseModel
 
 from app.modules.championship.application.championship_service import ChampionHistoryView
+from app.modules.championship.application.championship_service import (
+    ChampionRankingEntryView,
+    ChampionRankingPokemonView,
+)
 
 
 class ChampionHistoryResponse(BaseModel):
@@ -27,4 +31,42 @@ class ChampionHistoryResponse(BaseModel):
             run_id=view.run_id,
             became_champion_at=view.became_champion_at,
             lost_championship_at=view.lost_championship_at,
+        )
+
+
+class ChampionRankingPokemonResponse(BaseModel):
+    pokemon_id: UUID
+    pokemon_name: str
+    front_sprite_url: str | None
+    national_dex_number: int | None
+
+    @classmethod
+    def from_view(
+        cls, view: ChampionRankingPokemonView
+    ) -> "ChampionRankingPokemonResponse":
+        return cls(
+            pokemon_id=view.pokemon_id,
+            pokemon_name=view.pokemon_name,
+            front_sprite_url=view.front_sprite_url,
+            national_dex_number=view.national_dex_number,
+        )
+
+
+class ChampionRankingEntryResponse(BaseModel):
+    id: UUID
+    trainer_name: str
+    completed_battles: int
+    completed_at: datetime
+    team: list[ChampionRankingPokemonResponse]
+
+    @classmethod
+    def from_view(
+        cls, view: ChampionRankingEntryView
+    ) -> "ChampionRankingEntryResponse":
+        return cls(
+            id=view.id,
+            trainer_name=view.trainer_name,
+            completed_battles=view.completed_battles,
+            completed_at=view.completed_at,
+            team=[ChampionRankingPokemonResponse.from_view(member) for member in view.team],
         )

@@ -1,6 +1,6 @@
 import { useState, type FormEvent } from 'react'
 import { FaChevronRight, FaEnvelope, FaLock, FaUser } from 'react-icons/fa'
-import { useNavigate } from 'react-router'
+import { useLocation, useNavigate } from 'react-router'
 import AuthField from '../../components/AuthField/AuthField'
 import AuthPanel from '../../components/AuthPanel/AuthPanel'
 import useAuth from '../../components/AuthProvider/useAuth'
@@ -9,6 +9,7 @@ import { getAuthErrorMessage, register } from '../../service/authService'
 
 export default function RegisterPage() {
   const navigate = useNavigate()
+  const location = useLocation()
   const { signIn } = useAuth()
   const [trainerName, setTrainerName] = useState('')
   const [email, setEmail] = useState('')
@@ -34,7 +35,8 @@ export default function RegisterPage() {
         password,
       })
       signIn(response)
-      navigate(ROUTES.home)
+      const returnTo = (location.state as { returnTo?: unknown } | null)?.returnTo
+      navigate(typeof returnTo === 'string' && returnTo.startsWith('/') ? returnTo : ROUTES.home)
     } catch (submitError) {
       setError(getAuthErrorMessage(submitError, 'register'))
     } finally {

@@ -1,7 +1,7 @@
-import { useCallback, useEffect, useState } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router'
 import BattleArena from '../../components/BattleArena/BattleArena'
-import BattleDialog from '../../components/BattleDialog/BattleDialog'
+import BattleDialog, { type BattleDialogMessage } from '../../components/BattleDialog/BattleDialog'
 import BattleProgress from '../../components/BattleProgress/BattleProgress'
 import type { BattleSpeed } from '../../components/BattleSpeedControl/BattleSpeedControl'
 import { ApiError } from '../../service/apiClient'
@@ -11,10 +11,15 @@ import { ROUTES } from '../../routes/paths'
 import type { BattleEvent, BattleTurn, BattleView } from '../../types/battle'
 import type { RunSession, RunTeamMember } from '../../types/run'
 import useAuth from '../../components/AuthProvider/useAuth'
+import moveTypeCatalogJson from '../../data/moveTypes.json'
+
+const moveTypeCatalog = moveTypeCatalogJson as Record<string, string>
 
 type BattleLogEntry = {
   event: BattleEvent
   message: string
+  moveName?: string
+  moveType?: string
 }
 
 function formatApiError(error: unknown): string {
@@ -32,7 +37,7 @@ function eventMessage(event: BattleEvent): string | null {
     ? event.payload.parts.filter((part): part is string => typeof part === 'string')
     : []
   const name = (value?: string) => value?.replace(/^p[12][a-z]:\s*/i, '').trim() || 'Pokémon'
-  const move = (value?: string) => value?.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toLocaleUpperCase()) || 'um movimento'
+  const move = (value?: string) => formatMoveName(value) || 'um movimento'
 
   switch (event.event_type) {
     case 'start': return 'A batalha começou!'
@@ -55,11 +60,29 @@ function eventMessage(event: BattleEvent): string | null {
   }
 }
 
+function formatMoveName(value?: string): string {
+  return value?.replace(/-/g, ' ').replace(/\b\w/g, (letter) => letter.toLocaleUpperCase()) ?? ''
+}
+
+function moveTypeFromCatalog(value?: string): string | undefined {
+  if (!value) return undefined
+  const moveId = value.toLocaleLowerCase().replace(/[^a-z0-9]/g, '')
+  return moveTypeCatalog[moveId]
+}
+
 function entriesFrom(events: BattleEvent[]): BattleLogEntry[] {
   return events.flatMap((event) => {
     const message = eventMessage(event)
     const updatesScene = ['-damage', '-heal', '-sethp'].includes(event.event_type)
-    return message || updatesScene ? [{ event, message: message ?? '' }] : []
+    const parts = Array.isArray(event.payload.parts)
+      ? event.payload.parts.filter((part): part is string => typeof part === 'string')
+      : []
+    const moveName = event.event_type === 'move' ? formatMoveName(parts[1]) : undefined
+    const rawMoveType = event.payload.move_type ?? event.payload.moveType
+    const moveType = typeof rawMoveType === 'string'
+      ? rawMoveType
+      : moveTypeFromCatalog(parts[1])
+    return message || updatesScene ? [{ event, message: message ?? '', moveName, moveType }] : []
   })
 }
 
@@ -76,30 +99,42 @@ export default function BattlePage() {
   const [paused, setPaused] = useState(false)
   const [busy, setBusy] = useState<'load' | 'next' | null>('load')
   const [error, setError] = useState<string | null>(null)
+  const activeLoad = useRef<{ runId: string; promise: Promise<void> } | null>(null)
 
   const loadCurrentBattle = useCallback(async (activeRun: RunSession) => {
-    const [currentTeam, currentBattle] = await Promise.all([
-      getRunTeam(activeRun, authSession),
-      getCurrentBattle(activeRun, authSession),
-    ])
-    if (currentTeam.length !== 6) {
-      navigate(ROUTES.draft, { replace: true })
-      return
+    if (activeLoad.current?.runId === activeRun.runId) {
+      return activeLoad.current.promise
     }
 
-    setTeam(currentTeam)
-    setBattle(currentBattle)
-    setTurn(null)
-    setLogEntries([])
-    setShownMessageCount(0)
-    setPaused(false)
-    setError(null)
+    const request = (async () => {
+      const [currentTeam, currentBattle] = await Promise.all([
+        getRunTeam(activeRun, authSession),
+        getCurrentBattle(activeRun, authSession),
+      ])
+      if (currentTeam.length !== 6) {
+        navigate(ROUTES.draft, { replace: true })
+        return
+      }
 
-    if (currentBattle.status === 'PENDING' || currentBattle.status === 'RUNNING') {
-      const result = await startCurrentBattle(activeRun, authSession)
-      setTurn(result)
-      setLogEntries(entriesFrom(result.events))
-    }
+      setTeam(currentTeam)
+      setBattle(currentBattle)
+      setTurn(null)
+      setLogEntries([])
+      setShownMessageCount(0)
+      setPaused(false)
+      setError(null)
+
+      if (currentBattle.status === 'PENDING' || currentBattle.status === 'RUNNING') {
+        const result = await startCurrentBattle(activeRun, authSession)
+        setTurn(result)
+        setLogEntries(entriesFrom(result.events))
+      }
+    })()
+    const trackedRequest = request.finally(() => {
+      if (activeLoad.current?.promise === trackedRequest) activeLoad.current = null
+    })
+    activeLoad.current = { runId: activeRun.runId, promise: trackedRequest }
+    return trackedRequest
   }, [authSession, navigate])
 
   useEffect(() => {
@@ -147,7 +182,9 @@ export default function BattlePage() {
   const isBattleComplete = turn?.status === 'COMPLETED' || battle?.status === 'COMPLETED'
   const canContinue = isBattleComplete && turn?.run_status === 'ACTIVE' && turn.next_battle_number !== null
   const visibleEntries = logEntries.slice(0, shownMessageCount)
-  const visibleMessages = visibleEntries.map((entry) => entry.message).filter(Boolean)
+  const visibleMessages: BattleDialogMessage[] = visibleEntries.flatMap((entry) => (
+    entry.message ? [{ text: entry.message, moveName: entry.moveName, moveType: entry.moveType }] : []
+  ))
   const visibleEvents = visibleEntries.map((entry) => entry.event)
   const finalMessageIndex = logEntries.reduce(
     (lastIndex, entry, index) => entry.message ? index : lastIndex,
@@ -174,7 +211,14 @@ export default function BattlePage() {
               {busy === 'next' ? 'Preparando…' : 'Próximo treinador'}
             </button>
           ) : (
-            <button className="mt-3 min-h-11 border-2 border-graphite bg-surface px-6 font-display uppercase text-graphite hover:border-brand-strong" onClick={() => navigate(ROUTES.play)} type="button">Jogar novamente</button>
+            <div className="mt-4 flex flex-col justify-center gap-3 sm:flex-row">
+              {turn?.run_status === 'COMPLETED' && run && (
+                <button className="min-h-11 border-[3px] border-graphite bg-brand px-6 font-display uppercase text-white shadow-[2px_2px_0_#35353a] hover:bg-brand-strong" onClick={() => navigate(ROUTES.resultForRun(run.runId))} type="button">
+                  Ver time campeão
+                </button>
+              )}
+              <button className="min-h-11 border-2 border-graphite bg-surface px-6 font-display uppercase text-graphite hover:border-brand-strong" onClick={() => navigate(ROUTES.play)} type="button">Jogar novamente</button>
+            </div>
           )}
         </section>
       )}

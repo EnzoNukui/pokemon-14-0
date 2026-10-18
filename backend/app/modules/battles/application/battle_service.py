@@ -21,7 +21,16 @@ from app.modules.battles.infrastructure.showdown_client import (
     ShowdownClient,
     ShowdownUnavailable,
 )
-from app.modules.battles.infrastructure.team_mapper import to_engine_set
+from app.modules.battles.infrastructure.team_mapper import MAX_IVS, to_engine_set
+
+
+TRAINER_IVS_BY_CATEGORY = {
+    "GYM_LEADER": 25,
+    "ELITE_FOUR": 31,
+    "CHAMPION": 31,
+}
+GYM_EV_CAP = 100
+ELITE_FOUR_EV_CAP = 160
 
 
 class BattleService:
@@ -50,15 +59,18 @@ class BattleService:
         trainer_team_id: UUID,
     ) -> tuple[dict[str, object], tuple[BattleEventView, ...]]:
         player_team = await self._load_player_engine_team(run_id=run_id)
-        opponent_name, opponent_team = await self._load_opponent_engine_team(
-            trainer_team_id=trainer_team_id,
-        )
+        (
+            opponent_name,
+            opponent_category,
+            opponent_team,
+        ) = await self._load_opponent_engine_team(trainer_team_id=trainer_team_id)
         try:
             engine_result = await self._showdown.start_battle(
                 battle_id=battle.id,
                 player_name="Player",
                 player_team=player_team,
                 opponent_name=opponent_name,
+                opponent_category=opponent_category,
                 opponent_team=opponent_team,
                 battle_format="gen9nationaldexag",
             )
@@ -109,19 +121,30 @@ class BattleService:
             raise BattleEngineResponseError(
                 "The player team must contain exactly six Pokémon before a battle starts."
             )
-        return [
-            to_engine_set(pokemon.name, pokemon.form_name, member.build_snapshot)
-            for member, pokemon in members
-        ]
+        player_team = []
+        for member, pokemon in members:
+            engine_set = to_engine_set(
+                pokemon.name,
+                pokemon.form_name,
+                member.build_snapshot,
+                level=65,
+            )
+            player_team.append(engine_set)
+        return player_team
 
     async def _load_opponent_engine_team(
         self, *, trainer_team_id: UUID
-    ) -> tuple[str, list[dict[str, object]]]:
-        trainer_name = await self._session.scalar(
-            select(Trainer.name)
-            .join(TrainerTeam, TrainerTeam.trainer_id == Trainer.id)
-            .where(TrainerTeam.id == trainer_team_id)
-        )
+    ) -> tuple[str, str, list[dict[str, object]]]:
+        trainer_row = (
+            await self._session.execute(
+                select(Trainer.name, TrainerTeam.category)
+                .join(TrainerTeam, TrainerTeam.trainer_id == Trainer.id)
+                .where(TrainerTeam.id == trainer_team_id)
+            )
+        ).first()
+        if trainer_row is None:
+            raise BattleEngineResponseError("The selected trainer team was not found.")
+        trainer_name, trainer_category = trainer_row
         rows = await self._session.execute(
             select(TrainerTeamPokemon, Pokemon)
             .join(Pokemon, Pokemon.id == TrainerTeamPokemon.pokemon_id)
@@ -133,9 +156,20 @@ class BattleService:
             raise BattleEngineResponseError(
                 "The selected trainer must have a complete six-Pokémon team."
             )
-        # Trainers need a real offensive boost so poorly drafted teams cannot
-        # coast through the run; Life Orb still costs them HP on each hit.
-        trainer_item = "Life Orb"
+        # Gym leaders keep only curated items. Elite Four teams receive one
+        # automatic Life Orb at most; the champion keeps the existing fallback.
+        trainer_item = None if trainer_category == "GYM_LEADER" else "Life Orb"
+        elite_item_slot = None
+        if trainer_category == "ELITE_FOUR":
+            elite_item_slot = max(
+                members,
+                key=lambda entry: sum(entry[1].base_stats.values()),
+            )[0].slot_number
+        trainer_level = {
+            "GYM_LEADER": 57,
+            "ELITE_FOUR": 60,
+            "CHAMPION": 65,
+        }.get(trainer_category, 50)
         team = []
         for member, pokemon in members:
             engine_set = to_engine_set(
@@ -149,11 +183,36 @@ class BattleService:
                     "evs": member.evs,
                     "ivs": member.ivs,
                 },
+                level=trainer_level,
             )
-            if not engine_set["item"]:
+            ev_cap = {
+                "GYM_LEADER": GYM_EV_CAP,
+                "ELITE_FOUR": ELITE_FOUR_EV_CAP,
+            }.get(trainer_category)
+            if ev_cap is not None:
+                engine_evs = engine_set["evs"]
+                if isinstance(engine_evs, dict):
+                    engine_set["evs"] = {
+                        stat: min(value, ev_cap)
+                        for stat, value in engine_evs.items()
+                    }
+            trainer_iv = TRAINER_IVS_BY_CATEGORY.get(trainer_category, 31)
+            engine_set["ivs"] = {
+                stat: min(max_iv, trainer_iv)
+                for stat, max_iv in MAX_IVS.items()
+            }
+            can_receive_automatic_item = (
+                trainer_category != "ELITE_FOUR"
+                or member.slot_number == elite_item_slot
+            )
+            if (
+                not engine_set["item"]
+                and trainer_item
+                and can_receive_automatic_item
+            ):
                 engine_set["item"] = trainer_item
             team.append(engine_set)
-        return trainer_name, team
+        return trainer_name, trainer_category, team
 
     @staticmethod
     def _map_engine_events(

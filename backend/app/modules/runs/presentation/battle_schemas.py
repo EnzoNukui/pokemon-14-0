@@ -1,5 +1,6 @@
 """HTTP schemas for run battle paths, turns, and event history."""
 
+from datetime import datetime
 from uuid import UUID
 
 from pydantic import BaseModel, Field
@@ -154,3 +155,20 @@ class BattleTurnResponse(BaseModel):
             progress_index=view.progress_index,
             next_battle_number=view.next_battle_number,
         )
+
+
+class ChampionChallengePokemonResponse(BaseModel):
+    pokemon_id: UUID
+    pokemon_name: str
+    primary_type: str
+    secondary_type: str | None
+    front_sprite_url: str | None
+    national_dex_number: int | None
+
+
+class ChampionChallengeResponse(BaseModel):
+    battle_id: UUID
+    simulator_result: SimulatorResult
+    champion_name: str
+    became_champion_at: datetime
+    team: list[ChampionChallengePokemonResponse]

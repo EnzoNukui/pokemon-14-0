@@ -66,3 +66,32 @@ export type RunTeamMember = {
   national_dex_number: number | null
   build_snapshot: Record<string, unknown>
 }
+
+export type RunOutcome = {
+  run: RunResponse
+  hall_of_fame_snapshot: Record<string, unknown> | null
+  champion_history: {
+    id: string
+    user_id: string | null
+    team_id: string | null
+    trainer_team_id: string | null
+    run_id: string | null
+    became_champion_at: string
+    lost_championship_at: string | null
+  } | null
+}
+
+export type ChampionChallenge = {
+  battle_id: string
+  simulator_result: 'WIN' | 'LOSS' | 'DRAW'
+  champion_name: string
+  became_champion_at: string
+  team: {
+    pokemon_id: string
+    pokemon_name: string
+    primary_type: string
+    secondary_type: string | null
+    front_sprite_url: string | null
+    national_dex_number: number | null
+  }[]
+}

@@ -8,7 +8,7 @@ from random import Random
 from secrets import randbits
 from uuid import UUID
 
-from sqlalchemy import or_, select
+from sqlalchemy import func, or_, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.db.models.pokemon import Pokemon, PokemonBuild
@@ -283,8 +283,10 @@ class DraftService:
     async def _create_options(
         self, *, run: Run, round_number: int, display_set: int
     ) -> list[tuple[RunDraftOption, Pokemon]]:
-        already_offered = select(RunDraftOption.pokemon_id).where(
-            RunDraftOption.run_id == run.id
+        already_offered_species = (
+            select(func.lower(Pokemon.name))
+            .join(RunDraftOption, RunDraftOption.pokemon_id == Pokemon.id)
+            .where(RunDraftOption.run_id == run.id)
         )
         default_build_exists = (
             select(PokemonBuild.id)
@@ -302,7 +304,7 @@ class DraftService:
                             Pokemon.is_legendary.is_(True),
                             Pokemon.is_mythical.is_(True),
                         ),
-                        Pokemon.id.not_in(already_offered),
+                        func.lower(Pokemon.name).not_in(already_offered_species),
                         default_build_exists,
                     )
                     .order_by(Pokemon.id)
@@ -325,7 +327,13 @@ class DraftService:
         }
         if not available_keys:
             raise DraftPoolConfigurationError("No eligible Pokémon remain in the draft catalog.")
-        available_pokemon_count = sum(len(pools[key]) for key in available_keys)
+        available_pokemon_count = len(
+            {
+                pokemon.name.casefold()
+                for key in available_keys
+                for pokemon in pools[key]
+            }
+        )
         if available_pokemon_count < DRAFT_OPTIONS_PER_ROUND:
             raise DraftPoolConfigurationError(
                 "At least six distinct eligible Pokémon are required to generate a round."
@@ -349,9 +357,15 @@ class DraftService:
                     f"Draft tier pool {chosen_category} has no eligible Pokémon."
                 )
             pokemon = rng.choice(pool)
-            pool.remove(pokemon)
-            if not pool:
-                available_keys.pop(chosen_category, None)
+            selected_species = pokemon.name.casefold()
+            for category, candidate_pool in pools.items():
+                candidate_pool[:] = [
+                    candidate
+                    for candidate in candidate_pool
+                    if candidate.name.casefold() != selected_species
+                ]
+                if not candidate_pool:
+                    available_keys.pop(category, None)
             option = RunDraftOption(
                 run_id=run.id,
                 pokemon_id=pokemon.id,

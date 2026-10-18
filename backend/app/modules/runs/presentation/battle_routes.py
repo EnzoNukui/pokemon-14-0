@@ -7,6 +7,12 @@ from sqlalchemy.ext.asyncio import AsyncSession
 
 from app.db.session import get_session
 from app.modules.battles.application.errors import BattleEngineUnavailable
+from app.modules.championship.application.challenge_service import (
+    ChallengeRunNotCompleted,
+    ChallengeRunNotFound,
+    NoPreviousChampion,
+    simulate_champion_challenge,
+)
 from app.modules.runs.application.battle_errors import (
     BattleOrderConflict,
     BattlePathConfigurationError,
@@ -22,6 +28,8 @@ from app.modules.runs.presentation.battle_schemas import (
     BattlePathResponse,
     BattleResponse,
     BattleTurnResponse,
+    ChampionChallengePokemonResponse,
+    ChampionChallengeResponse,
 )
 
 router = APIRouter(prefix="/runs", tags=["runs and draft"])
@@ -105,3 +113,52 @@ async def submit_battle_choice(
     except (BattleProgressionError, BattleEngineUnavailable) as exc:
         _raise_battle_http_error(exc)
     return BattleTurnResponse.from_view(result)
+
+
+@router.post(
+    "/{run_id}/champion-challenge",
+    response_model=ChampionChallengeResponse,
+)
+async def challenge_previous_champion(
+    run_id: UUID,
+    owner: RunOwner = Depends(require_run_owner),
+    session: AsyncSession = Depends(get_session),
+) -> ChampionChallengeResponse:
+    try:
+        result = await simulate_champion_challenge(
+            session,
+            owner=owner,
+            run_id=run_id,
+        )
+    except ChallengeRunNotFound as exc:
+        raise HTTPException(status_code=404, detail="Completed run was not found.") from exc
+    except ChallengeRunNotCompleted as exc:
+        raise HTTPException(
+            status_code=409,
+            detail="Finish a winning run before challenging the previous champion.",
+        ) from exc
+    except NoPreviousChampion as exc:
+        raise HTTPException(
+            status_code=404,
+            detail="There is no previous champion team saved to challenge yet.",
+        ) from exc
+    except BattleEngineUnavailable as exc:
+        raise HTTPException(status_code=503, detail=str(exc)) from exc
+
+    return ChampionChallengeResponse(
+        battle_id=result.battle_id,
+        simulator_result=result.simulator_result,
+        champion_name=result.champion_name,
+        became_champion_at=result.became_champion_at,
+        team=[
+            ChampionChallengePokemonResponse(
+                pokemon_id=member.pokemon_id,
+                pokemon_name=member.pokemon_name,
+                primary_type=member.primary_type,
+                secondary_type=member.secondary_type,
+                front_sprite_url=member.front_sprite_url,
+                national_dex_number=member.national_dex_number,
+            )
+            for member in result.team
+        ],
+    )
