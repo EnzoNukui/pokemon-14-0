@@ -497,8 +497,7 @@ npm run build
 | | |
 | --- | --- |
 | **Diego Soares Trujillo** | [GitHub](https://github.com/diegotrujillo011) · [LinkedIn](https://www.linkedin.com/in/diego-trujillo-3441b9380) |
-
-**Enzo Nukui da Silva** | [GitHub](https://github.com/EnzoNukui) · [LinkedIn](https://www.linkedin.com/in/enzo-nukui/) |
+| **Enzo Nukui da Silva** | [GitHub](https://github.com/EnzoNukui) · [LinkedIn](https://www.linkedin.com/in/enzo-nukui/) |
 
 
 
